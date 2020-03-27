@@ -80,7 +80,7 @@ public class Lofin_Page extends javax.swing.JFrame {
         jCheckBox1.setText("Show Password");
         getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_form/last one 3.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("/Users/abdellatifanaflous/Desktop/Java Project/last one 3.jpg")); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 551, -1));
 
