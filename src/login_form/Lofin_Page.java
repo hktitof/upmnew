@@ -33,10 +33,11 @@ public class Lofin_Page extends javax.swing.JFrame {
 
         jTextField1_Username = new javax.swing.JTextField();
         jPasswordField1_Password = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,6 +60,13 @@ public class Lofin_Page extends javax.swing.JFrame {
         jPasswordField1_Password.setText("jPassworim");
         getContentPane().add(jPasswordField1_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 250, 40));
 
+        jLabel1.setText("Afiin Sakhi");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 50));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_form/last one 3.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 551, -1));
+
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(100, 100, 100));
@@ -75,10 +83,6 @@ public class Lofin_Page extends javax.swing.JFrame {
         jCheckBox1.setForeground(new java.awt.Color(100, 100, 100));
         jCheckBox1.setText("Show Password");
         getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_form/last one 3.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 551, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -143,6 +147,7 @@ public class Lofin_Page extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1_Password;
     private javax.swing.JTextField jTextField1_Username;
