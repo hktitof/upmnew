@@ -60,7 +60,7 @@ public class Lofin_Page extends javax.swing.JFrame {
         jPasswordField1_Password.setText("jPassworim");
         getContentPane().add(jPasswordField1_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 250, 40));
 
-        jLabel1.setText("test 2");
+        jLabel1.setText("test 3");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
