@@ -60,7 +60,7 @@ public class Lofin_Page extends javax.swing.JFrame {
         jPasswordField1_Password.setText("jPassworim");
         getContentPane().add(jPasswordField1_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 250, 40));
 
-        jLabel1.setText("Afiin Sakhi");
+        jLabel1.setText("latifa was here");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 120, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_form/last one 3.jpg"))); // NOI18N
