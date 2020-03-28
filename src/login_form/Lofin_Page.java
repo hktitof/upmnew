@@ -42,7 +42,7 @@ public class Lofin_Page extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Doone");
+        jLabel1.setText("Doone is dooone");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
         jTextField1_Username.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
