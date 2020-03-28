@@ -33,10 +33,9 @@ public class Lofin_Page extends javax.swing.JFrame {
 
         jTextField1_Username = new javax.swing.JTextField();
         jPasswordField1_Password = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        password = new javax.swing.JCheckBox();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,9 +59,6 @@ public class Lofin_Page extends javax.swing.JFrame {
         jPasswordField1_Password.setText("jPassworim");
         getContentPane().add(jPasswordField1_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 250, 40));
 
-        jLabel1.setText("test4");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
-
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(100, 100, 100));
@@ -75,10 +71,15 @@ public class Lofin_Page extends javax.swing.JFrame {
         jButton2.setText("Quit");
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, 140, 40));
 
-        jCheckBox1.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(100, 100, 100));
-        jCheckBox1.setText("Show Password");
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
+        password.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
+        password.setForeground(new java.awt.Color(100, 100, 100));
+        password.setText("Show Password");
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login_form/last one 3.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -107,6 +108,15 @@ public class Lofin_Page extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jTextField1_UsernameFocusLost
+
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+        // TODO add your handling code here:
+        if (password.isSelected()){
+            jPasswordField1_Password.setEchoChar((char)0);
+        }else{
+            jPasswordField1_Password.setEchoChar('*');
+        }
+    }//GEN-LAST:event_passwordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,10 +156,9 @@ public class Lofin_Page extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1_Password;
     private javax.swing.JTextField jTextField1_Username;
+    private javax.swing.JCheckBox password;
     // End of variables declaration//GEN-END:variables
 }
