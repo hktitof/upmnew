@@ -27,11 +27,31 @@ public class Button_Add extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
+        jTextField11 = new javax.swing.JTextField();
+        jTextField12 = new javax.swing.JTextField();
+        jTextField13 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 130, 20));
+        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, 130, 20));
+        add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 130, 20));
+        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 290, 130, 20));
+        add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 130, 20));
+        add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 130, 20));
+        add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 130, 20));
+        add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 150, 130, 20));
+        add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 130, 20));
+        add(jTextField13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 130, 20));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/670 460 button background.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/button background final 2.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 460));
     }// </editor-fold>//GEN-END:initComponents
@@ -39,5 +59,15 @@ public class Button_Add extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField10;
+    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTextField jTextField12;
+    private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
