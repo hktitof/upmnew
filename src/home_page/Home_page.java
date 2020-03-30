@@ -101,7 +101,7 @@ public class Home_page extends javax.swing.JFrame {
         jPanel1.add(dynamicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 570, 460));
 
         jLabel_home.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel_home.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel_home.setFont(new java.awt.Font("Tsukushi B Round Gothic", 1, 18)); // NOI18N
         jLabel_home.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_home.setText("Home");
         jLabel_home.setPreferredSize(new java.awt.Dimension(40, 14));
@@ -110,9 +110,9 @@ public class Home_page extends javax.swing.JFrame {
                 jLabel_homeMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 70, 20));
+        jPanel1.add(jLabel_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 100, 40));
 
-        jLabel2_service.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel2_service.setFont(new java.awt.Font("Tsukushi B Round Gothic", 1, 18)); // NOI18N
         jLabel2_service.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2_service.setText("Service");
         jLabel2_service.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,7 +123,7 @@ public class Home_page extends javax.swing.JFrame {
         jPanel1.add(jLabel2_service, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, -1, -1));
 
         jLabel_stage.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel_stage.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel_stage.setFont(new java.awt.Font("Tsukushi B Round Gothic", 1, 18)); // NOI18N
         jLabel_stage.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_stage.setText("Stage");
         jLabel_stage.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -131,37 +131,37 @@ public class Home_page extends javax.swing.JFrame {
                 jLabel_stageMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel_stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
+        jPanel1.add(jLabel_stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, -1, -1));
 
-        jLabel_stagiaire.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel_stagiaire.setFont(new java.awt.Font("Tsukushi B Round Gothic", 1, 18)); // NOI18N
         jLabel_stagiaire.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_stagiaire.setText("Stagiaire");
+        jLabel_stagiaire.setText("Trainee");
         jLabel_stagiaire.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel_stagiaireMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel_stagiaire, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
+        jPanel1.add(jLabel_stagiaire, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, -1, -1));
 
-        jLabel_encadrent.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel_encadrent.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jLabel_encadrent.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_encadrent.setText("Encadrent");
+        jLabel_encadrent.setText("Framed");
         jLabel_encadrent.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel_encadrentMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel_encadrent, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, -1, -1));
+        jPanel1.add(jLabel_encadrent, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tsukushi B Round Gothic", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Attestation");
+        jLabel2.setText("Certificate");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, -1, -1));
 
         jLabel_attestation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/final back 2.jpg"))); // NOI18N
         jLabel_attestation.setText("jLabel1");

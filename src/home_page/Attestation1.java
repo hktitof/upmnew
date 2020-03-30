@@ -9,12 +9,12 @@ package home_page;
  *
  * @author latifa
  */
-public class Attestation extends javax.swing.JPanel {
+public class Attestation1 extends javax.swing.JPanel {
 
     /**
      * Creates new form Attestation
      */
-    public Attestation() {
+    public Attestation1() {
         initComponents();
     }
 
