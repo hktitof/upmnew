@@ -60,7 +60,15 @@ public class Lofin_Page extends javax.swing.JFrame {
 
         jPasswordField1_Password.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jPasswordField1_Password.setForeground(new java.awt.Color(150, 150, 150));
-        jPasswordField1_Password.setText("jPassworim");
+        jPasswordField1_Password.setText("password");
+        jPasswordField1_Password.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPasswordField1_PasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jPasswordField1_PasswordFocusLost(evt);
+            }
+        });
         getContentPane().add(jPasswordField1_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 250, 40));
 
         jButton1.setBackground(new java.awt.Color(204, 204, 204));
@@ -73,6 +81,11 @@ public class Lofin_Page extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(100, 100, 100));
         jButton2.setText("Quit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 510, 140, 40));
 
         password.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
@@ -121,6 +134,33 @@ public class Lofin_Page extends javax.swing.JFrame {
             jPasswordField1_Password.setEchoChar('*');
         }
     }//GEN-LAST:event_passwordActionPerformed
+
+    private void jPasswordField1_PasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1_PasswordFocusLost
+        // TODO add your handling code here:
+         String pass = String.valueOf(jPasswordField1_Password.getPassword());
+         if(pass.trim().equals("") || 
+                pass.trim().toLowerCase().equals("password"))
+        {
+            jPasswordField1_Password.setText("password");
+            jPasswordField1_Password.setForeground(new Color (150,150,150));
+        }
+        
+    }//GEN-LAST:event_jPasswordField1_PasswordFocusLost
+
+    private void jPasswordField1_PasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1_PasswordFocusGained
+        // TODO add your handling code here:
+        String pass = String.valueOf(jPasswordField1_Password.getPassword());
+         if(pass.trim().toLowerCase().equals("password"))
+        {
+            jPasswordField1_Password.setText("");
+            jPasswordField1_Password.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_jPasswordField1_PasswordFocusGained
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
