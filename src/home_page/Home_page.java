@@ -29,7 +29,7 @@ public class Home_page extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextField1_titof = new javax.swing.JTextField();
         jButton1_titof = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -40,7 +40,7 @@ public class Home_page extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
         jLabel2.setText("ID :");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 90, 40));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 240, 40));
+        jPanel1.add(jTextField1_titof, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 240, 40));
 
         jButton1_titof.setText("OK");
         jPanel1.add(jButton1_titof, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 100, 40));
@@ -103,6 +103,6 @@ public class Home_page extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField1_titof;
     // End of variables declaration//GEN-END:variables
 }
