@@ -5,18 +5,39 @@
  */
 package home_page;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
 /**
  *
  * @author abdellatifanaflous
  */
 public class Home_page extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Home_page
-     */
+    GridBagLayout layout = new GridBagLayout();
+    Stagiaire p1;
+    Stage p2;
+    Service p3;
     public Home_page() {
         initComponents();
         this.setLocationRelativeTo(null);
+        p1 = new Stagiaire();
+        p2=new Stage();
+        p3=new Service();
+        dynamicPanel.setLayout(layout);
+        GridBagConstraints c= new GridBagConstraints();
+        c.gridx=0;
+        c.gridy=0;
+        dynamicPanel.add(p1,c);
+        c.gridx=0;
+        c.gridy=0;
+        dynamicPanel.add(p2,c);
+        c.gridx=0;
+        c.gridy=0;
+        dynamicPanel.add(p3,c);
+        p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(false);
     }
 
     /**
@@ -29,22 +50,72 @@ public class Home_page extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1_titof = new javax.swing.JTextField();
-        jButton1_titof = new javax.swing.JButton();
+        dynamicPanel = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Grande", 0, 36)); // NOI18N
-        jLabel2.setText("ID :");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 90, 50));
-        jPanel1.add(jTextField1_titof, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 240, 40));
+        dynamicPanel.setName(""); // NOI18N
+        dynamicPanel.setRequestFocusEnabled(false);
 
-        jButton1_titof.setText("OK");
-        jPanel1.add(jButton1_titof, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 100, 40));
+        javax.swing.GroupLayout dynamicPanelLayout = new javax.swing.GroupLayout(dynamicPanel);
+        dynamicPanel.setLayout(dynamicPanelLayout);
+        dynamicPanelLayout.setHorizontalGroup(
+            dynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 570, Short.MAX_VALUE)
+        );
+        dynamicPanelLayout.setVerticalGroup(
+            dynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(dynamicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 570, 460));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton1.setText("stagiaire");
+        jButton1.setName("btn_stagiaire"); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 100, 40));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton2.setText("Stage");
+        jButton2.setName("btn_service"); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 100, 40));
+
+        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton3.setText("Home");
+        jButton3.setName("btn_home"); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 100, 40));
+
+        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton4.setText("Service");
+        jButton4.setName("btn_service"); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 100, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/final back 2.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -63,6 +134,35 @@ public class Home_page extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        p1.setVisible(true);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        
+  
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+   
+        p1.setVisible(false);
+        p3.setVisible(false);
+        p2.setVisible(true);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+     
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        
+        p1.setVisible(false);
+        p3.setVisible(true);
+        p2.setVisible(false);
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,10 +200,12 @@ public class Home_page extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1_titof;
+    private javax.swing.JPanel dynamicPanel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1_titof;
     // End of variables declaration//GEN-END:variables
 }
