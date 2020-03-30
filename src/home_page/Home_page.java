@@ -16,6 +16,7 @@ public class Home_page extends javax.swing.JFrame {
      */
     public Home_page() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -47,7 +48,7 @@ public class Home_page extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/last back final.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 940, 600));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
