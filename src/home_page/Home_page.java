@@ -18,12 +18,18 @@ public class Home_page extends javax.swing.JFrame {
     Stagiaire p1;
     Stage p2;
     Service p3;
+    Encadrent p4;
+    Attestation p5;
+    Home p6;
     public Home_page() {
         initComponents();
         this.setLocationRelativeTo(null);
         p1 = new Stagiaire();
         p2=new Stage();
         p3=new Service();
+        p4=new Encadrent();
+        p5=new Attestation();
+        p6=new Home();
         dynamicPanel.setLayout(layout);
         GridBagConstraints c= new GridBagConstraints();
         c.gridx=0;
@@ -35,9 +41,23 @@ public class Home_page extends javax.swing.JFrame {
         c.gridx=0;
         c.gridy=0;
         dynamicPanel.add(p3,c);
+        c.gridx=0;
+        c.gridy=0;
+        dynamicPanel.add(p4,c);
+        c.gridx=0;
+        c.gridy=0;
+        dynamicPanel.add(p5,c);
+        c.gridx=0;
+        c.gridy=0;
+        dynamicPanel.add(p6,c);
         p1.setVisible(false);
         p2.setVisible(false);
         p3.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(false);
+        p6.setVisible(true);
+     
+        
     }
 
     /**
@@ -51,16 +71,19 @@ public class Home_page extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         dynamicPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel_home = new javax.swing.JLabel();
+        jLabel2_service = new javax.swing.JLabel();
+        jLabel_stage = new javax.swing.JLabel();
+        jLabel_stagiaire = new javax.swing.JLabel();
+        jLabel_encadrent = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel_attestation = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        dynamicPanel.setBackground(new java.awt.Color(204, 204, 204));
         dynamicPanel.setName(""); // NOI18N
         dynamicPanel.setRequestFocusEnabled(false);
 
@@ -77,49 +100,60 @@ public class Home_page extends javax.swing.JFrame {
 
         jPanel1.add(dynamicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 570, 460));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setText("stagiaire");
-        jButton1.setName("btn_stagiaire"); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jLabel_home.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel_home.setText("Home");
+        jLabel_home.setPreferredSize(new java.awt.Dimension(40, 14));
+        jLabel_home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_homeMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 100, 40));
+        jPanel1.add(jLabel_home, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton2.setText("Stage");
-        jButton2.setName("btn_service"); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        jLabel2_service.setForeground(new java.awt.Color(204, 204, 255));
+        jLabel2_service.setText("Service");
+        jLabel2_service.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2_serviceMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 100, 40));
+        jPanel1.add(jLabel2_service, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton3.setText("Home");
-        jButton3.setName("btn_home"); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        jLabel_stage.setText("Stage");
+        jLabel_stage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_stageMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 100, 40));
+        jPanel1.add(jLabel_stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, -1, -1));
 
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton4.setText("Service");
-        jButton4.setName("btn_service"); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+        jLabel_stagiaire.setText("Stagiaire");
+        jLabel_stagiaire.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_stagiaireMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 100, 40));
+        jPanel1.add(jLabel_stagiaire, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/final back 2.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 600));
+        jLabel_encadrent.setText("Encadrent");
+        jLabel_encadrent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_encadrentMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel_encadrent, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, -1, -1));
+
+        jLabel2.setText("Attestation");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, -1, -1));
+
+        jLabel_attestation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/final back 2.jpg"))); // NOI18N
+        jLabel_attestation.setText("jLabel1");
+        jPanel1.add(jLabel_attestation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,34 +169,61 @@ public class Home_page extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        p1.setVisible(true);
-        p2.setVisible(false);
-        p3.setVisible(false);
-        
-  
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-   
-        p1.setVisible(false);
-        p3.setVisible(false);
-        p2.setVisible(true);
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-     
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+    private void jLabel2_serviceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2_serviceMouseClicked
         p1.setVisible(false);
         p3.setVisible(true);
         p2.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(false);
+        p6.setVisible(false);
+    }//GEN-LAST:event_jLabel2_serviceMouseClicked
+
+    private void jLabel_stageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_stageMouseClicked
+        p1.setVisible(false);
+        p3.setVisible(false);
+        p2.setVisible(true);
+        p4.setVisible(false);
+        p5.setVisible(false);
+        p6.setVisible(false);
+    }//GEN-LAST:event_jLabel_stageMouseClicked
+
+    private void jLabel_stagiaireMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_stagiaireMouseClicked
+        p1.setVisible(true);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(false);
+        p6.setVisible(false);
+    }//GEN-LAST:event_jLabel_stagiaireMouseClicked
+
+    private void jLabel_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_homeMouseClicked
         
-    }//GEN-LAST:event_jButton4ActionPerformed
+       p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(false);
+        p6.setVisible(true);
+    }//GEN-LAST:event_jLabel_homeMouseClicked
+
+    private void jLabel_encadrentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_encadrentMouseClicked
+        p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        p4.setVisible(true);
+        p5.setVisible(false);
+        p6.setVisible(false);
+    }//GEN-LAST:event_jLabel_encadrentMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(true);
+        p6.setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -201,11 +262,13 @@ public class Home_page extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel dynamicPanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel2_service;
+    private javax.swing.JLabel jLabel_attestation;
+    private javax.swing.JLabel jLabel_encadrent;
+    private javax.swing.JLabel jLabel_home;
+    private javax.swing.JLabel jLabel_stage;
+    private javax.swing.JLabel jLabel_stagiaire;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
