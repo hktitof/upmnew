@@ -83,7 +83,7 @@ public class Home_page extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        dynamicPanel.setBackground(new java.awt.Color(204, 204, 204));
+        dynamicPanel.setBackground(new java.awt.Color(255, 255, 255));
         dynamicPanel.setName(""); // NOI18N
         dynamicPanel.setRequestFocusEnabled(false);
 
