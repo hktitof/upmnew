@@ -5,17 +5,59 @@
  */
 package home_page;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import stagepannels.Ajouterstage;
+import stagepannels.Chercherstage;
+import stagepannels.Homestage;
+import stagepannels.Modifierstage;
+import stagepannels.Supprimerstage;
+
 /**
  *
  * @author latifa
  */
 public class Stage extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Stage
-     */
+     GridBagLayout layout = new GridBagLayout();
+    Supprimerstage ss;
+    Ajouterstage as;
+    Modifierstage ms;
+    Homestage hs;
+    Chercherstage cs ;
     public Stage() {
         initComponents();
+        ss=new Supprimerstage();
+        as=new Ajouterstage();
+        ms=new Modifierstage();
+        hs = new Homestage();
+        cs  =new  Chercherstage ();
+     
+       stagepannel.setLayout(layout);
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx=0;
+        c.gridy=0;
+         stagepannel.add(ss,c);
+        c.gridx=0;
+        c.gridy=0;
+        stagepannel.add(hs,c);
+        c.gridx=0;
+        c.gridy=0;
+        stagepannel.add(as,c);
+        c.gridx=0;
+        c.gridy=0;
+        stagepannel.add(ms,c);
+        c.gridx=0;
+        c.gridy=0;
+       stagepannel.add(cs,c);
+        c.gridx=0;
+        c.gridy=0;
+        ss.setVisible(false);
+        as.setVisible(false);
+        ms.setVisible(false);
+        cs.setVisible(false);
+        hs.setVisible(true);
+        back.setVisible(false);
     }
 
     /**
@@ -27,89 +69,188 @@ public class Stage extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        ajouter = new javax.swing.JButton();
+        supprimer = new javax.swing.JButton();
+        modifier = new javax.swing.JButton();
+        chercher = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        stagepannel = new javax.swing.JPanel();
+        back = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 460));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Projet", "Durée", "Encadrent", "Date début", "Date fin"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jButton1.setText("Annuler");
-
-        jButton2.setText("Ajouter");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ajouter.setText("Ajouter");
+        ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ajouterActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Modifier");
+        supprimer.setText("Supprimer");
+        supprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supprimerActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Supprimer");
+        modifier.setText("Modifier");
+        modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifierActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("chercher");
+        chercher.setText("chercher");
+        chercher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chercherActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Annuler");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout stagepannelLayout = new javax.swing.GroupLayout(stagepannel);
+        stagepannel.setLayout(stagepannelLayout);
+        stagepannelLayout.setHorizontalGroup(
+            stagepannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, stagepannelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(back)
+                .addGap(238, 238, 238))
+        );
+        stagepannelLayout.setVerticalGroup(
+            stagepannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, stagepannelLayout.createSequentialGroup()
+                .addContainerGap(430, Short.MAX_VALUE)
+                .addComponent(back)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton5)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(ajouter)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(supprimer)
+                .addGap(18, 18, 18)
+                .addComponent(chercher)
+                .addGap(18, 18, 18)
+                .addComponent(modifier)
+                .addContainerGap(112, Short.MAX_VALUE))
+            .addComponent(stagepannel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(stagepannel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modifier)
+                    .addComponent(chercher, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(supprimer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1)
+                    .addComponent(ajouter))
+                .addGap(43, 43, 43))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
+        ss.setVisible(false);
+        as.setVisible(true);
+        ms.setVisible(false);
+         hs.setVisible(false);
+         cs.setVisible(false);
+        ajouter.setVisible(false);
+        modifier.setVisible(false);
+        supprimer.setVisible(false);
+        chercher.setVisible(false);
+        back.setVisible(true);
+    }//GEN-LAST:event_ajouterActionPerformed
+
+    private void chercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chercherActionPerformed
+         ss.setVisible(false);
+        as.setVisible(false);
+        ms.setVisible(false);
+         hs.setVisible(false);
+         cs.setVisible(true);
+        ajouter.setVisible(false);
+        modifier.setVisible(false);
+        supprimer.setVisible(false);
+        chercher.setVisible(false);
+        back.setVisible(true);
+    }//GEN-LAST:event_chercherActionPerformed
+
+    private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+          ss.setVisible(true);
+        as.setVisible(false);
+        ms.setVisible(false);
+         hs.setVisible(false);
+         cs.setVisible(false);
+        ajouter.setVisible(false);
+        modifier.setVisible(false);
+        supprimer.setVisible(false);
+        chercher.setVisible(false);
+        back.setVisible(true);
+    }//GEN-LAST:event_supprimerActionPerformed
+
+    private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
+        // TODO add your handling code here:
+          ss.setVisible(false);
+        as.setVisible(false);
+        ms.setVisible(true);
+         hs.setVisible(false);
+         cs.setVisible(false);
+        ajouter.setVisible(false);
+        modifier.setVisible(false);
+        supprimer.setVisible(false);
+        chercher.setVisible(false);
+        back.setVisible(true);
+    }//GEN-LAST:event_modifierActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        ss.setVisible(false);
+        as.setVisible(false);
+        ms.setVisible(false);
+        hs.setVisible(true);
+        cs.setVisible(false);
+        ajouter.setVisible(true);
+        modifier.setVisible(true);
+        supprimer.setVisible(true);
+        chercher.setVisible(true);
+        back.setVisible(false);
+    }//GEN-LAST:event_backActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ajouter;
+    private javax.swing.JButton back;
+    private javax.swing.JButton chercher;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JButton modifier;
+    private javax.swing.JPanel stagepannel;
+    private javax.swing.JButton supprimer;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servicepanels;
+package trainerpannels;
 
 /**
  *
  * @author ESSAKHI Hamza
  */
-public class Modifierservice extends javax.swing.JPanel {
+public class Modifierstagiaire extends javax.swing.JPanel {
 
     /**
-     * Creates new form Modifierservice
+     * Creates new form Modifierstagiaire
      */
-    public Modifierservice() {
+    public Modifierstagiaire() {
         initComponents();
     }
 
@@ -27,32 +27,21 @@ public class Modifierservice extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
-
-        setBackground(new java.awt.Color(51, 255, 51));
-
-        jButton2.setText("jButton2");
+        setBackground(new java.awt.Color(255, 153, 153));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(340, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(157, 157, 157))
+            .addGap(0, 571, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(396, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(44, 44, 44))
+            .addGap(0, 364, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }
