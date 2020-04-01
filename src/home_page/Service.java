@@ -51,6 +51,9 @@ public class Service extends javax.swing.JPanel {
         ap.setVisible(false);
         mp.setVisible(false);
         hs.setVisible(true);
+        back.setVisible(false);
+
+                
     }
 
     /**
@@ -66,6 +69,7 @@ public class Service extends javax.swing.JPanel {
         jButton5 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         servicepannel = new javax.swing.JPanel();
+        back = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 460));
@@ -95,12 +99,19 @@ public class Service extends javax.swing.JPanel {
         servicepannel.setLayout(servicepannelLayout);
         servicepannelLayout.setHorizontalGroup(
             servicepannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 627, Short.MAX_VALUE)
         );
         servicepannelLayout.setVerticalGroup(
             servicepannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 395, Short.MAX_VALUE)
         );
+
+        back.setText("Back");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -113,7 +124,9 @@ public class Service extends javax.swing.JPanel {
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(servicepannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -124,7 +137,8 @@ public class Service extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -141,6 +155,7 @@ public class Service extends javax.swing.JPanel {
         jButton6.setVisible(false);
         jButton7.setVisible(false);
         jButton5.setVisible(false);
+        back.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -151,6 +166,8 @@ public class Service extends javax.swing.JPanel {
         jButton6.setVisible(false);
         jButton7.setVisible(false);
         jButton5.setVisible(false);
+        jButton5.setVisible(false);
+        back.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -162,10 +179,25 @@ public class Service extends javax.swing.JPanel {
         jButton6.setVisible(false);
         jButton7.setVisible(false);
         jButton5.setVisible(false);
+        jButton5.setVisible(false);
+        back.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+        sp.setVisible(false);
+        ap.setVisible(false);
+        mp.setVisible(false);
+        hs.setVisible(true);
+        back.setVisible(false);
+         jButton6.setVisible(true);
+        jButton7.setVisible(true);
+        jButton5.setVisible(true);
+    }//GEN-LAST:event_backActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
