@@ -28,6 +28,7 @@ public class Modifierencad extends javax.swing.JPanel {
     private void initComponents() {
 
         setBackground(new java.awt.Color(204, 204, 0));
+        setPreferredSize(new java.awt.Dimension(570, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

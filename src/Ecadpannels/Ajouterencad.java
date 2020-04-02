@@ -28,6 +28,7 @@ public class Ajouterencad extends javax.swing.JPanel {
     private void initComponents() {
 
         setBackground(new java.awt.Color(102, 102, 255));
+        setPreferredSize(new java.awt.Dimension(570, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

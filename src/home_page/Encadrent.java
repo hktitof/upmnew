@@ -209,9 +209,9 @@ public class Encadrent extends javax.swing.JPanel {
 
     private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
         // TODO add your handling code here:
-         ss.setVisible(false);
+         ss.setVisible(true);
         as.setVisible(false);
-        ms.setVisible(true);
+        ms.setVisible(false);
          hs.setVisible(false);
          cs.setVisible(false);
         ajouter.setVisible(false);
