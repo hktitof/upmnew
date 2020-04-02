@@ -15,18 +15,17 @@ import java.awt.GridBagLayout;
 
 /**
  *
- * @author latifa
+ * @author ESSAKHI Hamza
  */
 public class Encadrent extends javax.swing.JPanel {
 
-      GridBagLayout layout = new GridBagLayout();
+    GridBagLayout layout = new GridBagLayout();
     Suipprimerencad ss;
     Ajouterencad as;
     Modifierencad ms;
     Homeencad hs;
     Chercherencad cs ;
     public Encadrent() {
-        initComponents();
         initComponents();
         ss=new Suipprimerencad();
         as=new Ajouterencad();
@@ -70,118 +69,113 @@ public class Encadrent extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        chercher = new javax.swing.JButton();
-        supprimer = new javax.swing.JButton();
-        modifier = new javax.swing.JButton();
         ajouter = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        Encapannel = new javax.swing.JPanel();
+        supprimer = new javax.swing.JButton();
+        chercher = new javax.swing.JButton();
+        modifier = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        Encapannel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(570, 460));
-
-        chercher.setText("Chercher");
-        chercher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chercherActionPerformed(evt);
-            }
-        });
-
-        supprimer.setText("Supprimer");
-        supprimer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                supprimerActionPerformed(evt);
-            }
-        });
-
-        modifier.setText("Modifier");
-        modifier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifierActionPerformed(evt);
-            }
-        });
-
-        ajouter.setText("Ajouter");
+        ajouter.setText("Add");
         ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ajouterActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Annuler");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        supprimer.setText("Delete");
+        supprimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                supprimerActionPerformed(evt);
             }
         });
 
-        back.setText("Back");
+        chercher.setText("Search");
+        chercher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chercherActionPerformed(evt);
+            }
+        });
+
+        modifier.setText("Modify");
+        modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifierActionPerformed(evt);
+            }
+        });
+
+        back.setText("back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
 
+        Encapannel.setBackground(new java.awt.Color(0, 0, 255));
+
         javax.swing.GroupLayout EncapannelLayout = new javax.swing.GroupLayout(Encapannel);
         Encapannel.setLayout(EncapannelLayout);
         EncapannelLayout.setHorizontalGroup(
             EncapannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EncapannelLayout.createSequentialGroup()
-                .addGap(246, 246, 246)
-                .addComponent(back)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         EncapannelLayout.setVerticalGroup(
             EncapannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EncapannelLayout.createSequentialGroup()
-                .addContainerGap(317, Short.MAX_VALUE)
-                .addComponent(back)
-                .addGap(38, 38, 38))
+            .addGap(0, 418, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 143, Short.MAX_VALUE)
-                .addComponent(chercher)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(supprimer)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(modifier)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(modifier, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(Encapannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(Encapannel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(modifier, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ajouter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(32, 32, 32))
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Encapannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:*
+             ss.setVisible(false);
+        as.setVisible(false);
+        ms.setVisible(false);
+        hs.setVisible(true);
+        cs.setVisible(false);
+        ajouter.setVisible(true);
+        modifier.setVisible(true);
+        supprimer.setVisible(true);
+        chercher.setVisible(true);
+        back.setVisible(false);
+    }//GEN-LAST:event_backActionPerformed
 
     private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
         // TODO add your handling code here:
-        ss.setVisible(false);
+          ss.setVisible(false);
         as.setVisible(true);
         ms.setVisible(false);
          hs.setVisible(false);
@@ -192,6 +186,20 @@ public class Encadrent extends javax.swing.JPanel {
         chercher.setVisible(false);
         back.setVisible(true);
     }//GEN-LAST:event_ajouterActionPerformed
+
+    private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
+        // TODO add your handling code here:
+          ss.setVisible(true);
+        as.setVisible(false);
+        ms.setVisible(false);
+         hs.setVisible(false);
+         cs.setVisible(false);
+        ajouter.setVisible(false);
+        modifier.setVisible(false);
+        supprimer.setVisible(false);
+        chercher.setVisible(false);
+        back.setVisible(true);
+    }//GEN-LAST:event_supprimerActionPerformed
 
     private void chercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chercherActionPerformed
         // TODO add your handling code here:
@@ -207,23 +215,9 @@ public class Encadrent extends javax.swing.JPanel {
         back.setVisible(true);
     }//GEN-LAST:event_chercherActionPerformed
 
-    private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
-        // TODO add your handling code here:
-         ss.setVisible(true);
-        as.setVisible(false);
-        ms.setVisible(false);
-         hs.setVisible(false);
-         cs.setVisible(false);
-        ajouter.setVisible(false);
-        modifier.setVisible(false);
-        supprimer.setVisible(false);
-        chercher.setVisible(false);
-        back.setVisible(true);
-    }//GEN-LAST:event_supprimerActionPerformed
-
     private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
         // TODO add your handling code here:
-          ss.setVisible(false);
+              ss.setVisible(false);
         as.setVisible(false);
         ms.setVisible(true);
          hs.setVisible(false);
@@ -235,27 +229,12 @@ public class Encadrent extends javax.swing.JPanel {
         back.setVisible(true);
     }//GEN-LAST:event_modifierActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        // TODO add your handling code here:
-         ss.setVisible(false);
-        as.setVisible(false);
-        ms.setVisible(false);
-        hs.setVisible(true);
-        cs.setVisible(false);
-        ajouter.setVisible(true);
-        modifier.setVisible(true);
-        supprimer.setVisible(true);
-        chercher.setVisible(true);
-        back.setVisible(false);
-    }//GEN-LAST:event_backActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Encapannel;
     private javax.swing.JButton ajouter;
     private javax.swing.JButton back;
     private javax.swing.JButton chercher;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton modifier;
     private javax.swing.JButton supprimer;
     // End of variables declaration//GEN-END:variables

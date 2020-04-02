@@ -15,10 +15,13 @@ import trainerpannels.Supprimerstagiaire;
 
 /**
  *
- * @author latifa
+ *
+ * 
+ * @author ESSAKHI Hamza
  */
 public class Stagiaire extends javax.swing.JPanel {
 
+    
     GridBagLayout layout = new GridBagLayout();
     Supprimerstagiaire ss;
     Ajouterstagiaire as;
@@ -27,7 +30,8 @@ public class Stagiaire extends javax.swing.JPanel {
     Chercherstagiaire cs ;
     public Stagiaire() {
         initComponents();
-        initComponents();
+         GridBagLayout layout = new GridBagLayout();
+    initComponents();
         ss=new Supprimerstagiaire();
         as=new Ajouterstagiaire();
         ms=new Modifierstagiaire();
@@ -70,147 +74,113 @@ public class Stagiaire extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        stagiairepannel = new javax.swing.JPanel();
-        supprimer = new javax.swing.JButton();
-        modifier = new javax.swing.JButton();
-        chercher = new javax.swing.JButton();
-        ajouter = new javax.swing.JButton();
         back = new javax.swing.JButton();
+        ajouter = new javax.swing.JButton();
+        supprimer = new javax.swing.JButton();
+        chercher = new javax.swing.JButton();
+        modifier = new javax.swing.JButton();
+        stagiairepannel = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(570, 460));
-
-        stagiairepannel.setBackground(new java.awt.Color(255, 255, 255));
-        stagiairepannel.setPreferredSize(new java.awt.Dimension(570, 460));
-
-        javax.swing.GroupLayout stagiairepannelLayout = new javax.swing.GroupLayout(stagiairepannel);
-        stagiairepannel.setLayout(stagiairepannelLayout);
-        stagiairepannelLayout.setHorizontalGroup(
-            stagiairepannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
-        );
-        stagiairepannelLayout.setVerticalGroup(
-            stagiairepannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 405, Short.MAX_VALUE)
-        );
-
-        supprimer.setActionCommand("Delete");
-        supprimer.setLabel("Delete");
-        supprimer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                supprimerActionPerformed(evt);
-            }
-        });
-
-        modifier.setText("Modifier");
-        modifier.setMaximumSize(new java.awt.Dimension(63, 23));
-        modifier.setMinimumSize(new java.awt.Dimension(63, 23));
-        modifier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modifierActionPerformed(evt);
-            }
-        });
-
-        chercher.setText("Chercher");
-        chercher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chercherActionPerformed(evt);
-            }
-        });
-
-        ajouter.setText("Ajouter");
-        ajouter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajouterActionPerformed(evt);
-            }
-        });
-
-        back.setText("Back");
+        back.setText("back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
 
+        ajouter.setText("Add");
+        ajouter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ajouterActionPerformed(evt);
+            }
+        });
+
+        supprimer.setText("Delete");
+        supprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supprimerActionPerformed(evt);
+            }
+        });
+
+        chercher.setText("Search");
+        chercher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chercherActionPerformed(evt);
+            }
+        });
+
+        modifier.setText("Modify");
+        modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifierActionPerformed(evt);
+            }
+        });
+
+        stagiairepannel.setBackground(new java.awt.Color(51, 51, 255));
+
+        javax.swing.GroupLayout stagiairepannelLayout = new javax.swing.GroupLayout(stagiairepannel);
+        stagiairepannel.setLayout(stagiairepannelLayout);
+        stagiairepannelLayout.setHorizontalGroup(
+            stagiairepannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        stagiairepannelLayout.setVerticalGroup(
+            stagiairepannelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 418, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(stagiairepannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chercher)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(27, 27, 27)
+                .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(stagiairepannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(stagiairepannel, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addComponent(stagiairepannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
-      ss.setVisible(false);
-        as.setVisible(true);
-        ms.setVisible(false);
-         hs.setVisible(false);
-         cs.setVisible(false);
-        ajouter.setVisible(false);
-        modifier.setVisible(false);
-        supprimer.setVisible(false);
-        chercher.setVisible(false);
-        back.setVisible(true);
-    }//GEN-LAST:event_ajouterActionPerformed
-
-    private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
-        // TODO add your handling code here
-        ss.setVisible(false);
-        as.setVisible(false);
-        ms.setVisible(true);
-         hs.setVisible(false);
-         cs.setVisible(false);
-        ajouter.setVisible(false);
-        modifier.setVisible(false);
-        supprimer.setVisible(false);
-        chercher.setVisible(false);
-        back.setVisible(true);
-    }//GEN-LAST:event_modifierActionPerformed
-
-    private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
-        ss.setVisible(true);
+         ss.setVisible(false);
         as.setVisible(false);
         ms.setVisible(false);
-         hs.setVisible(false);
-         cs.setVisible(false);
-        ajouter.setVisible(false);
-        modifier.setVisible(false);
-        supprimer.setVisible(false);
-        chercher.setVisible(false);
-        back.setVisible(true);
-    }//GEN-LAST:event_supprimerActionPerformed
+        hs.setVisible(true);
+        cs.setVisible(false);
+        ajouter.setVisible(true);
+        modifier.setVisible(true);
+        supprimer.setVisible(true);
+        chercher.setVisible(true);
+        back.setVisible(false);
+    }//GEN-LAST:event_backActionPerformed
 
     private void chercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chercherActionPerformed
         // TODO add your handling code here:
-        ss.setVisible(false);
+          ss.setVisible(false);
         as.setVisible(false);
         ms.setVisible(false);
          hs.setVisible(false);
@@ -222,19 +192,48 @@ public class Stagiaire extends javax.swing.JPanel {
         back.setVisible(true);
     }//GEN-LAST:event_chercherActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+    private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
         // TODO add your handling code here:
-        ss.setVisible(false);
+           ss.setVisible(true);
         as.setVisible(false);
         ms.setVisible(false);
-         hs.setVisible(true);
+         hs.setVisible(false);
          cs.setVisible(false);
-        ajouter.setVisible(true);
-        modifier.setVisible(true);
-        supprimer.setVisible(true);
-        chercher.setVisible(true);
-        back.setVisible(false);
-    }//GEN-LAST:event_backActionPerformed
+        ajouter.setVisible(false);
+        modifier.setVisible(false);
+        supprimer.setVisible(false);
+        chercher.setVisible(false);
+        back.setVisible(true);
+    }//GEN-LAST:event_supprimerActionPerformed
+
+    private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
+        // TODO add your handling code here:
+          ss.setVisible(false);
+        as.setVisible(false);
+        ms.setVisible(true);
+         hs.setVisible(false);
+         cs.setVisible(false);
+        ajouter.setVisible(false);
+        modifier.setVisible(false);
+        supprimer.setVisible(false);
+        chercher.setVisible(false);
+        back.setVisible(true);
+    }//GEN-LAST:event_modifierActionPerformed
+
+    private void ajouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajouterActionPerformed
+        // TODO add your handling code here:
+                ss.setVisible(false);
+        as.setVisible(true);
+        ms.setVisible(false);
+         hs.setVisible(false);
+         cs.setVisible(false);
+        ajouter.setVisible(false);
+        modifier.setVisible(false);
+        supprimer.setVisible(false);
+        chercher.setVisible(false);
+        back.setVisible(true);
+         
+    }//GEN-LAST:event_ajouterActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
