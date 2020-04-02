@@ -98,7 +98,7 @@ public class Home_page extends javax.swing.JFrame {
             .addGap(0, 460, Short.MAX_VALUE)
         );
 
-        jPanel1.add(dynamicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 70, 570, 460));
+        jPanel1.add(dynamicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 570, 460));
 
         jLabel_home.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_home.setFont(new java.awt.Font("Tsukushi B Round Gothic", 1, 18)); // NOI18N
@@ -165,7 +165,7 @@ public class Home_page extends javax.swing.JFrame {
 
         jLabel_attestation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/final back 2.jpg"))); // NOI18N
         jLabel_attestation.setText("jLabel1");
-        jPanel1.add(jLabel_attestation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 600));
+        jPanel1.add(jLabel_attestation, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 930, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
