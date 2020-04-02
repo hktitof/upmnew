@@ -91,14 +91,14 @@ public class Home_page extends javax.swing.JFrame {
         dynamicPanel.setLayout(dynamicPanelLayout);
         dynamicPanelLayout.setHorizontalGroup(
             dynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGap(0, 580, Short.MAX_VALUE)
         );
         dynamicPanelLayout.setVerticalGroup(
             dynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGap(0, 509, Short.MAX_VALUE)
         );
 
-        jPanel1.add(dynamicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 570, 460));
+        jPanel1.add(dynamicPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 580, 509));
 
         jLabel_home.setBackground(new java.awt.Color(255, 255, 255));
         jLabel_home.setFont(new java.awt.Font("Tsukushi B Round Gothic", 1, 18)); // NOI18N
