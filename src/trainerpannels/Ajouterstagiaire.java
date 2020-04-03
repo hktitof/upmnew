@@ -33,7 +33,7 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
         setForeground(new java.awt.Color(153, 0, 153));
         setRequestFocusEnabled(false);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Add");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

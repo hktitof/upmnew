@@ -71,8 +71,8 @@ public class Service extends javax.swing.JPanel {
         servicepannel = new javax.swing.JPanel();
         back = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 102, 255));
-        setPreferredSize(new java.awt.Dimension(570, 460));
+        setBackground(new java.awt.Color(255, 102, 102));
+        setPreferredSize(new java.awt.Dimension(570, 509));
 
         jButton5.setText("Delete");
         jButton5.addActionListener(new java.awt.event.ActionListener() {

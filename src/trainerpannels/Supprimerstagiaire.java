@@ -31,7 +31,7 @@ public class Supprimerstagiaire extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 51, 51));
 
-        jButton1.setText("deletede");
+        jButton1.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
