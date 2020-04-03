@@ -71,7 +71,6 @@ public class Encadrent extends javax.swing.JPanel {
 
         ajouter = new javax.swing.JButton();
         supprimer = new javax.swing.JButton();
-        chercher = new javax.swing.JButton();
         modifier = new javax.swing.JButton();
         back = new javax.swing.JButton();
         Encapannel = new javax.swing.JPanel();
@@ -87,13 +86,6 @@ public class Encadrent extends javax.swing.JPanel {
         supprimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 supprimerActionPerformed(evt);
-            }
-        });
-
-        chercher.setText("Search");
-        chercher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chercherActionPerformed(evt);
             }
         });
 
@@ -129,12 +121,10 @@ public class Encadrent extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(164, 164, 164)
+                .addGap(270, 270, 270)
                 .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(modifier, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                 .addContainerGap())
@@ -153,7 +143,6 @@ public class Encadrent extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -169,7 +158,7 @@ public class Encadrent extends javax.swing.JPanel {
         ajouter.setVisible(true);
         modifier.setVisible(true);
         supprimer.setVisible(true);
-        chercher.setVisible(true);
+        
         back.setVisible(false);
     }//GEN-LAST:event_backActionPerformed
 
@@ -183,7 +172,7 @@ public class Encadrent extends javax.swing.JPanel {
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
-        chercher.setVisible(false);
+       
         back.setVisible(true);
     }//GEN-LAST:event_ajouterActionPerformed
 
@@ -197,23 +186,9 @@ public class Encadrent extends javax.swing.JPanel {
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
-        chercher.setVisible(false);
+       
         back.setVisible(true);
     }//GEN-LAST:event_supprimerActionPerformed
-
-    private void chercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chercherActionPerformed
-        // TODO add your handling code here:
-        ss.setVisible(false);
-        as.setVisible(false);
-        ms.setVisible(false);
-         hs.setVisible(false);
-         cs.setVisible(true);
-        ajouter.setVisible(false);
-        modifier.setVisible(false);
-        supprimer.setVisible(false);
-        chercher.setVisible(false);
-        back.setVisible(true);
-    }//GEN-LAST:event_chercherActionPerformed
 
     private void modifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierActionPerformed
         // TODO add your handling code here:
@@ -225,7 +200,7 @@ public class Encadrent extends javax.swing.JPanel {
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
-        chercher.setVisible(false);
+      
         back.setVisible(true);
     }//GEN-LAST:event_modifierActionPerformed
 
@@ -234,7 +209,6 @@ public class Encadrent extends javax.swing.JPanel {
     private javax.swing.JPanel Encapannel;
     private javax.swing.JButton ajouter;
     private javax.swing.JButton back;
-    private javax.swing.JButton chercher;
     private javax.swing.JButton modifier;
     private javax.swing.JButton supprimer;
     // End of variables declaration//GEN-END:variables

@@ -29,7 +29,7 @@ public class Ajouterservice extends javax.swing.JPanel {
 
         jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(153, 153, 153));
         setPreferredSize(new java.awt.Dimension(580, 418));
 
         jButton1.setText("Add");

@@ -77,7 +77,6 @@ public class Stagiaire extends javax.swing.JPanel {
         back = new javax.swing.JButton();
         ajouter = new javax.swing.JButton();
         supprimer = new javax.swing.JButton();
-        chercher = new javax.swing.JButton();
         modifier = new javax.swing.JButton();
         stagiairepannel = new javax.swing.JPanel();
 
@@ -99,13 +98,6 @@ public class Stagiaire extends javax.swing.JPanel {
         supprimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 supprimerActionPerformed(evt);
-            }
-        });
-
-        chercher.setText("Search");
-        chercher.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chercherActionPerformed(evt);
             }
         });
 
@@ -134,12 +126,10 @@ public class Stagiaire extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(174, Short.MAX_VALUE)
+                .addContainerGap(280, Short.MAX_VALUE)
                 .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
@@ -157,7 +147,6 @@ public class Stagiaire extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(chercher, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -173,23 +162,9 @@ public class Stagiaire extends javax.swing.JPanel {
         ajouter.setVisible(true);
         modifier.setVisible(true);
         supprimer.setVisible(true);
-        chercher.setVisible(true);
+       
         back.setVisible(false);
     }//GEN-LAST:event_backActionPerformed
-
-    private void chercherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chercherActionPerformed
-        // TODO add your handling code here:
-          ss.setVisible(false);
-        as.setVisible(false);
-        ms.setVisible(false);
-         hs.setVisible(false);
-         cs.setVisible(true);
-        ajouter.setVisible(false);
-        modifier.setVisible(false);
-        supprimer.setVisible(false);
-        chercher.setVisible(false);
-        back.setVisible(true);
-    }//GEN-LAST:event_chercherActionPerformed
 
     private void supprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supprimerActionPerformed
         // TODO add your handling code here:
@@ -201,7 +176,7 @@ public class Stagiaire extends javax.swing.JPanel {
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
-        chercher.setVisible(false);
+       
         back.setVisible(true);
     }//GEN-LAST:event_supprimerActionPerformed
 
@@ -215,7 +190,7 @@ public class Stagiaire extends javax.swing.JPanel {
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
-        chercher.setVisible(false);
+       
         back.setVisible(true);
     }//GEN-LAST:event_modifierActionPerformed
 
@@ -229,7 +204,7 @@ public class Stagiaire extends javax.swing.JPanel {
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
-        chercher.setVisible(false);
+      
         back.setVisible(true);
          
     }//GEN-LAST:event_ajouterActionPerformed
@@ -238,7 +213,6 @@ public class Stagiaire extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ajouter;
     private javax.swing.JButton back;
-    private javax.swing.JButton chercher;
     private javax.swing.JButton modifier;
     private javax.swing.JPanel stagiairepannel;
     private javax.swing.JButton supprimer;

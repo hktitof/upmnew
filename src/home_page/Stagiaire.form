@@ -17,12 +17,10 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="174" max="32767" attributes="0"/>
+              <EmptySpace pref="280" max="32767" attributes="0"/>
               <Component id="ajouter" min="-2" pref="88" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="supprimer" min="-2" pref="88" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="chercher" min="-2" pref="88" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="modifier" min="-2" pref="88" max="-2" attributes="0"/>
           </Group>
@@ -43,7 +41,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ajouter" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="supprimer" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="chercher" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="modifier" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -74,14 +71,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="supprimerActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="chercher">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Search"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chercherActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="modifier">
