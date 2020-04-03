@@ -8,7 +8,6 @@ package home_page;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import trainerpannels.Ajouterstagiaire;
-import trainerpannels.Chercherstagiaire;
 import trainerpannels.Homestagiaire;
 import trainerpannels.Modifierstagiaire;
 import trainerpannels.Supprimerstagiaire;
@@ -27,7 +26,6 @@ public class Stagiaire extends javax.swing.JPanel {
     Ajouterstagiaire as;
     Modifierstagiaire ms;
     Homestagiaire hs;
-    Chercherstagiaire cs ;
     public Stagiaire() {
         initComponents();
          GridBagLayout layout = new GridBagLayout();
@@ -36,7 +34,6 @@ public class Stagiaire extends javax.swing.JPanel {
         as=new Ajouterstagiaire();
         ms=new Modifierstagiaire();
         hs = new Homestagiaire();
-        cs  =new  Chercherstagiaire ();
      
        stagiairepannel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
@@ -54,13 +51,9 @@ public class Stagiaire extends javax.swing.JPanel {
         stagiairepannel.add(ms,c);
         c.gridx=0;
         c.gridy=0;
-       stagiairepannel.add(cs,c);
-        c.gridx=0;
-        c.gridy=0;
         ss.setVisible(false);
         as.setVisible(false);
         ms.setVisible(false);
-        cs.setVisible(false);
         hs.setVisible(true);
         back.setVisible(false);
     }
@@ -158,7 +151,7 @@ public class Stagiaire extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(false);
         hs.setVisible(true);
-        cs.setVisible(false);
+      
         ajouter.setVisible(true);
         modifier.setVisible(true);
         supprimer.setVisible(true);
@@ -172,7 +165,7 @@ public class Stagiaire extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(false);
          hs.setVisible(false);
-         cs.setVisible(false);
+         
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
@@ -186,7 +179,7 @@ public class Stagiaire extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(true);
          hs.setVisible(false);
-         cs.setVisible(false);
+    
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
@@ -200,7 +193,7 @@ public class Stagiaire extends javax.swing.JPanel {
         as.setVisible(true);
         ms.setVisible(false);
          hs.setVisible(false);
-         cs.setVisible(false);
+       
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);

@@ -6,7 +6,6 @@
 package home_page;
 
 import Ecadpannels.Ajouterencad;
-import Ecadpannels.Chercherencad;
 import Ecadpannels.Homeencad;
 import Ecadpannels.Modifierencad;
 import Ecadpannels.Suipprimerencad;
@@ -24,14 +23,14 @@ public class Encadrent extends javax.swing.JPanel {
     Ajouterencad as;
     Modifierencad ms;
     Homeencad hs;
-    Chercherencad cs ;
+  
     public Encadrent() {
         initComponents();
         ss=new Suipprimerencad();
         as=new Ajouterencad();
         ms=new Modifierencad();
         hs = new Homeencad();
-        cs  =new  Chercherencad ();
+        
      
        Encapannel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
@@ -49,13 +48,11 @@ public class Encadrent extends javax.swing.JPanel {
         Encapannel.add(ms,c);
         c.gridx=0;
         c.gridy=0;
-       Encapannel.add(cs,c);
-        c.gridx=0;
-        c.gridy=0;
+       
         ss.setVisible(false);
         as.setVisible(false);
         ms.setVisible(false);
-        cs.setVisible(false);
+        
         hs.setVisible(true);
         back.setVisible(false);
     }
@@ -154,7 +151,7 @@ public class Encadrent extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(false);
         hs.setVisible(true);
-        cs.setVisible(false);
+        
         ajouter.setVisible(true);
         modifier.setVisible(true);
         supprimer.setVisible(true);
@@ -168,7 +165,7 @@ public class Encadrent extends javax.swing.JPanel {
         as.setVisible(true);
         ms.setVisible(false);
          hs.setVisible(false);
-         cs.setVisible(false);
+        
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
@@ -182,7 +179,7 @@ public class Encadrent extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(false);
          hs.setVisible(false);
-         cs.setVisible(false);
+         
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
@@ -196,7 +193,7 @@ public class Encadrent extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(true);
          hs.setVisible(false);
-         cs.setVisible(false);
+       
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);

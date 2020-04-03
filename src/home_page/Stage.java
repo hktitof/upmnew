@@ -8,7 +8,6 @@ package home_page;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import stagepannels.Ajouterstage;
-import stagepannels.Chercherstage;
 import stagepannels.Homestage;
 import stagepannels.Modifierstage;
 import stagepannels.Supprimerstage;
@@ -27,7 +26,6 @@ public class Stage extends javax.swing.JPanel {
     Ajouterstage as;
     Modifierstage ms;
     Homestage hs;
-    Chercherstage cs ;
     public Stage() {
         initComponents();
           initComponents();
@@ -35,7 +33,6 @@ public class Stage extends javax.swing.JPanel {
         as=new Ajouterstage();
         ms=new Modifierstage();
         hs = new Homestage();
-        cs  =new  Chercherstage ();
      
        stagepannel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
@@ -53,13 +50,11 @@ public class Stage extends javax.swing.JPanel {
         stagepannel.add(ms,c);
         c.gridx=0;
         c.gridy=0;
-       stagepannel.add(cs,c);
-        c.gridx=0;
-        c.gridy=0;
+       
         ss.setVisible(false);
         as.setVisible(false);
         ms.setVisible(false);
-        cs.setVisible(false);
+     
         hs.setVisible(true);
         back.setVisible(false);
         
@@ -163,7 +158,7 @@ public class Stage extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(false);
         hs.setVisible(true);
-        cs.setVisible(false);
+        
         ajouter.setVisible(true);
         modifier.setVisible(true);
         supprimer.setVisible(true);
@@ -177,7 +172,7 @@ public class Stage extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(true);
          hs.setVisible(false);
-         cs.setVisible(false);
+        
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
@@ -191,7 +186,7 @@ public class Stage extends javax.swing.JPanel {
         as.setVisible(false);
         ms.setVisible(false);
          hs.setVisible(false);
-         cs.setVisible(false);
+       
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
@@ -205,7 +200,7 @@ public class Stage extends javax.swing.JPanel {
         as.setVisible(true);
         ms.setVisible(false);
          hs.setVisible(false);
-         cs.setVisible(false);
+         
         ajouter.setVisible(false);
         modifier.setVisible(false);
         supprimer.setVisible(false);
