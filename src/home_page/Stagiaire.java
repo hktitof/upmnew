@@ -73,6 +73,9 @@ public class Stagiaire extends javax.swing.JPanel {
         modifier = new javax.swing.JButton();
         stagiairepannel = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
+        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\projetTutoù\\04.04.23.22\\upmnew\\src\\home_page\\sssssssssssss.jpg")); // NOI18N
         back.setText("back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +104,7 @@ public class Stagiaire extends javax.swing.JPanel {
             }
         });
 
-        stagiairepannel.setBackground(new java.awt.Color(51, 51, 255));
+        stagiairepannel.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout stagiairepannelLayout = new javax.swing.GroupLayout(stagiairepannel);
         stagiairepannel.setLayout(stagiairepannelLayout);
@@ -126,7 +129,7 @@ public class Stagiaire extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(stagiairepannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );

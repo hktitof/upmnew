@@ -71,7 +71,7 @@ public class Service extends javax.swing.JPanel {
         servicepannel = new javax.swing.JPanel();
         back = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 102, 102));
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 509));
 
         jButton5.setText("Delete");
@@ -95,7 +95,7 @@ public class Service extends javax.swing.JPanel {
             }
         });
 
-        servicepannel.setBackground(new java.awt.Color(255, 0, 51));
+        servicepannel.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout servicepannelLayout = new javax.swing.GroupLayout(servicepannel);
         servicepannel.setLayout(servicepannelLayout);
@@ -108,6 +108,7 @@ public class Service extends javax.swing.JPanel {
             .addGap(0, 468, Short.MAX_VALUE)
         );
 
+        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\projetTutoù\\04.04.23.22\\upmnew\\src\\home_page\\sssssssssssss.jpg")); // NOI18N
         back.setText("Back");
         back.setMaximumSize(new java.awt.Dimension(67, 23));
         back.setMinimumSize(new java.awt.Dimension(67, 23));
@@ -133,7 +134,7 @@ public class Service extends javax.swing.JPanel {
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)

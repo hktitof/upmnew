@@ -72,6 +72,8 @@ public class Encadrent extends javax.swing.JPanel {
         back = new javax.swing.JButton();
         Encapannel = new javax.swing.JPanel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         ajouter.setText("Add");
         ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +102,7 @@ public class Encadrent extends javax.swing.JPanel {
             }
         });
 
-        Encapannel.setBackground(new java.awt.Color(0, 0, 255));
+        Encapannel.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout EncapannelLayout = new javax.swing.GroupLayout(Encapannel);
         Encapannel.setLayout(EncapannelLayout);
@@ -126,7 +128,7 @@ public class Encadrent extends javax.swing.JPanel {
                 .addComponent(modifier, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(Encapannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
