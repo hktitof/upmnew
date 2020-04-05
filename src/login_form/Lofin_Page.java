@@ -4,21 +4,30 @@
  * and open the template in the editor.
  */
 package login_form;
+import home_page.Home_page;
 import java.awt.Color;
 import javax.swing.*;
 import java.awt.event.*;
-
+import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author abdellatifanaflous
  */
 public class Lofin_Page extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Lofin_Page
-     */
+    public Home_page home;
+    public Connection cn;
+    public Statement st;
     public Lofin_Page() {
         initComponents();
+        try{
+           Class.forName("com.mysql.jdbc.Driver");
+           cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/gsdba","root","");
+           st=cn.createStatement();
+           
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Not Connected");
+        }
         this.setLocationRelativeTo(null);
     }
 
@@ -75,6 +84,11 @@ public class Lofin_Page extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(100, 100, 100));
         jButton1.setText("Sign in");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 510, 140, 40));
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
@@ -161,6 +175,22 @@ public class Lofin_Page extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
+            String sql="select * from admin where Username= '"+jTextField1_Username.getText()+"'and Password = '"+String.valueOf(jPasswordField1_Password.getPassword())+"'";
+            ResultSet rss=st.executeQuery(sql);
+            if(rss.next()){
+                home=new Home_page();
+                home.setVisible(true);
+                this.dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Nom d'utilisateur ou mot de passe incorrect");
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "kesalahan");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
