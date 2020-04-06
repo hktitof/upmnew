@@ -188,7 +188,7 @@ public class Lofin_Page extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Nom d'utilisateur ou mot de passe incorrect");
             }
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "kesalahan");
+            JOptionPane.showMessageDialog(null, "not connected to database");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
