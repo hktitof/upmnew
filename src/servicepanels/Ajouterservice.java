@@ -63,7 +63,7 @@ public class Ajouterservice extends javax.swing.JPanel {
         add(jScrollPane1);
         jScrollPane1.setBounds(30, 150, 350, 210);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\projetTutoù\\04.04.23.22\\upmnew\\src\\home_page\\Service add.jpg")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Service add.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
         jLabel2.setBounds(0, 0, 570, 380);
