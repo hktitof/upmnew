@@ -5,18 +5,62 @@
  */
 package Ecadpannels;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ESSAKHI Hamza
  */
-public class Homeencad extends javax.swing.JPanel {
-
+public final class Homeencad extends javax.swing.JPanel {
+          
     /**
      * Creates new form Homeencad
      */
     public Homeencad() {
         initComponents();
+        showecad();
+       
     }
+    public ArrayList<EncadList> encadList () {
+     ArrayList<EncadList> encadList;
+        encadList = new ArrayList<>();
+        try{
+             Class.forName("com.mysql.jdbc.Driver");
+             Connection  con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gsdba","root","");
+             Statement st=con.createStatement();
+             ResultSet rs = st.executeQuery("SELECT *FROM encadrent");
+             EncadList en;
+             while(rs.next()){
+                 en= new EncadList(rs.getInt("encadrentId"),rs.getString("encadrentNom"),rs.getString("encadrentPrenom"),rs.getString("encadrentNiveau"),rs.getString("sexe"),rs.getString("adresse"));
+                 encadList.add(en);
+             }
+                 }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return encadList;
+    }
+    public void showecad(){
+        ArrayList<EncadList> list = encadList();
+        DefaultTableModel model =(DefaultTableModel)jTable2_ecad.getModel();
+        Object[] row =new Object [6];
+        for(int i=0;i<list.size();i++){
+            row[0]=list.get(i).getEncadrentId();
+            row[1]=list.get(i).getEncadrentNom();
+            row[2]=list.get(i).getEncadrentPrenom();
+            row[3]=list.get(i).getAdresse();
+            row[4]=list.get(i).getSexe();
+            row[5]=list.get(i).getEncadrentNiveau();
+            model.addRow(row);   
+        }   
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,25 +72,22 @@ public class Homeencad extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTable2_ecad = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTable2_ecad.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "NOM", "PRENOM", "ADRESSE", "SEX", "NUVEAU"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(jTable2_ecad);
 
         jLabel1.setText("CIN :");
 
@@ -79,8 +120,8 @@ public class Homeencad extends javax.swing.JPanel {
                     .addComponent(jLabel1)
                     .addComponent(jButton1))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -89,7 +130,7 @@ public class Homeencad extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable2_ecad;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

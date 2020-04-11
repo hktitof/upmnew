@@ -5,6 +5,15 @@
  */
 package trainerpannels;
 
+import home_page.Encadrent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ESSAKHI Hamza
@@ -16,7 +25,49 @@ public class Homestagiaire extends javax.swing.JPanel {
      */
     public Homestagiaire() {
         initComponents();
+         showecad();
     }
+    public ArrayList<StagiaireListe> stgrList () {
+     ArrayList<StagiaireListe> stgrList;
+        stgrList = new ArrayList<>();
+        try{
+             Class.forName("com.mysql.jdbc.Driver");
+             Connection  con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gsdba","root","");
+             Statement st=con.createStatement();
+             ResultSet rs = st.executeQuery("select stagiaireId,stagiaireNom,stagiairePrenom,stagiaireCin,stagiairetelephone,stagiaireadress,nometablissement,specialiteNom,encadrentnom,encadrentprenom,stageprojet from stagiaire,etablissement,specialite,stage,encadrent where stagiaire.stagiairespecialite=specialite.specialiteID and stagiaire.stgiaireEtablissement=etablissement.etablissementId and stagiaire.stagiaireencadrent=encadrent.encadrentID and stagiaire.stagiairestage=stage.stageid;");
+             StagiaireListe ser;
+             while(rs.next()){
+                 ser= new StagiaireListe(rs.getInt("stagiaireId"),rs.getInt("stagiairetelephone"),rs.getString("stagiaireNom"),rs.getString("stagiaireprenom"),rs.getString("stagiaireCin"),rs.getString("stagiaireadress"),rs.getString("nometablissement"),rs.getString("specialiteNom"),rs.getString("encadrentnom"),rs.getString("encadrentprenom"),rs.getString("stageprojet")); 
+                      
+                 stgrList.add(ser);
+             }
+                 }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return stgrList;
+    }
+     public void showecad(){
+        ArrayList<StagiaireListe> list = stgrList();
+        DefaultTableModel model =(DefaultTableModel)jTable1.getModel();
+        Object[] row =new Object [11];
+        for(int i=0;i<list.size();i++){
+            row[0]=list.get(i).getId();
+            row[1]=list.get(i).getNom();
+            row[2]=list.get(i).getPrenom();
+            row[3]=list.get(i).getCin();
+            row[4]=list.get(i).getTele();
+            row[5]=list.get(i).getAdress();
+            row[6]=list.get(i).getEta();
+            row[7]=list.get(i).getSpec();
+            row[8]=list.get(i).getEnca();
+            row[9]=list.get(i).getTp();
+            row[10]=list.get(i).getStag();
+                    
+            model.addRow(row);   
+        }   
+    }
+   
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,13 +88,10 @@ public class Homestagiaire extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "NOM", "PRENOM", "CIN", "ADRESS", "TELEPHON", "ETABLISSEMENT", "SPECIALITE", "ENCADREMENTNom", "Encadrementprenom", "STAGE"
             }
         ));
         jScrollPane1.setViewportView(jTable1);

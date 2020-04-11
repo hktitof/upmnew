@@ -5,6 +5,14 @@
  */
 package servicepanels;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ESSAKHI Hamza
@@ -16,6 +24,35 @@ public class Homeservice extends javax.swing.JPanel {
      */
     public Homeservice() {
         initComponents();
+         showecad();
+    }
+     public ArrayList<ServiceList> serList () {
+     ArrayList<ServiceList> serList;
+        serList = new ArrayList<>();
+        try{
+             Class.forName("com.mysql.jdbc.Driver");
+             Connection  con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gsdba","root","");
+             Statement st=con.createStatement();
+             ResultSet rs = st.executeQuery("SELECT *FROM service");
+             ServiceList ser;
+             while(rs.next()){
+                 ser= new ServiceList(rs.getInt("serviceId"),rs.getString("serviceNom"));
+                 serList.add(ser);
+             }
+                 }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return serList;
+    }
+     public void showecad(){
+        ArrayList<ServiceList> list = serList();
+        DefaultTableModel model =(DefaultTableModel)jTable1_service.getModel();
+        Object[] row =new Object [2];
+        for(int i=0;i<list.size();i++){
+            row[0]=list.get(i).getServiceid();
+            row[1]=list.get(i).getServiceNom();
+            model.addRow(row);   
+        }   
     }
 
     /**
@@ -30,7 +67,7 @@ public class Homeservice extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTable1_service = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -38,15 +75,15 @@ public class Homeservice extends javax.swing.JPanel {
 
         jLabel1.setText("Service name :");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1_service.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
+                "ID", "NOM De SERVICE"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTable1_service);
 
         jButton1.setText("Search");
 
@@ -89,7 +126,7 @@ public class Homeservice extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable1_service;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
     

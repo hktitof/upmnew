@@ -5,6 +5,15 @@
  */
 package stagepannels;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import trainerpannels.StagiaireListe;
+
 /**
  *
  * @author ESSAKHI Hamza
@@ -16,8 +25,43 @@ public class Homestage extends javax.swing.JPanel {
      */
     public Homestage() {
         initComponents();
+        showecad();
     }
-
+public ArrayList<StageList> stgList () {
+     ArrayList<StageList> stgList;
+        stgList = new ArrayList<>();
+        try{
+             Class.forName("com.mysql.jdbc.Driver");
+             Connection  con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gsdba","root","");
+             Statement st=con.createStatement();
+             ResultSet rs = st.executeQuery("select stageprojet,serviceNom,Stagedatedebut,stagedatefin,encadrentnom,encadrentPrenom from stage,service,encadrent where  service.serviceId=stage.stageservice and stage.ecadrentstage=encadrent.encadrentId;");
+             StageList ser;
+             while(rs.next()){
+                 ser= new StageList (rs.getString("stageprojet"),rs.getString("serviceNom"),rs.getString("encadrentnom"),rs.getString("encadrentPrenom"),rs.getDate("StageDateDebut"),rs.getDate("StageDateFin")); 
+                 
+                 stgList.add(ser);
+             }
+                 }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return stgList;
+    }
+     public void showecad(){
+        ArrayList<StageList> list = stgList();
+        DefaultTableModel model =(DefaultTableModel)jTable1.getModel();
+        Object[] row =new Object [6];
+        for(int i=0;i<list.size();i++){
+            row[0]=list.get(i).getStage();
+            row[1]=list.get(i).getService();
+             row[2]=list.get(i).getDe();
+              row[3]=list.get(i).getFin();
+               row[4]=list.get(i).getEncanom();
+                row[5]=list.get(i).getEncadprenom();
+                 
+                 
+            model.addRow(row);   
+        }   
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,13 +82,10 @@ public class Homestage extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "PROJET", "SERVICE", "DATE DE DEBUT", "DATE DE FIN", "ENCADRENT NOM", "ENCADRENT PRENOM"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
