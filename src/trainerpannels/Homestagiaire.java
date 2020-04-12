@@ -1,71 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package trainerpannels;
 
+import connection.ConnexionMysql;
 import home_page.Encadrent;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.proteanit.sql.DbUtils;
+import servicepanels.Homeservice;
 
-/**
- *
- * @author ESSAKHI Hamza
- */
 public class Homestagiaire extends javax.swing.JPanel {
-
-    /**
-     * Creates new form Homestagiaire
-     */
+    public Connection cnx;
+    public PreparedStatement st;
+    public ResultSet result;
     public Homestagiaire() {
         initComponents();
-         showecad();
+        cnx=ConnexionMysql.ConnexionDB();
+        UpdateTable();
     }
-    public ArrayList<StagiaireListe> stgrList () {
-     ArrayList<StagiaireListe> stgrList;
-        stgrList = new ArrayList<>();
-        try{
-             Class.forName("com.mysql.jdbc.Driver");
-             Connection  con=DriverManager.getConnection("jdbc:mysql://localhost:3306/gsdba","root","");
-             Statement st=con.createStatement();
-             ResultSet rs = st.executeQuery("select stagiaireId,stagiaireNom,stagiairePrenom,stagiaireCin,stagiairetelephone,stagiaireadress,nometablissement,specialiteNom,encadrentnom,encadrentprenom,stageprojet from stagiaire,etablissement,specialite,stage,encadrent where stagiaire.stagiairespecialite=specialite.specialiteID and stagiaire.stgiaireEtablissement=etablissement.etablissementId and stagiaire.stagiaireencadrent=encadrent.encadrentID and stagiaire.stagiairestage=stage.stageid;");
-             StagiaireListe ser;
-             while(rs.next()){
-                 ser= new StagiaireListe(rs.getInt("stagiaireId"),rs.getInt("stagiairetelephone"),rs.getString("stagiaireNom"),rs.getString("stagiaireprenom"),rs.getString("stagiaireCin"),rs.getString("stagiaireadress"),rs.getString("nometablissement"),rs.getString("specialiteNom"),rs.getString("encadrentnom"),rs.getString("encadrentprenom"),rs.getString("stageprojet")); 
-                      
-                 stgrList.add(ser);
-             }
-                 }catch(Exception e){
-            JOptionPane.showMessageDialog(null, e);
+    public void UpdateTable(){
+         String sql="select NomComplet,mail,NumTele,CIN,Etablissement,Projet,Encadrent,Specialite from stagiaire";
+        try {
+            st=cnx.prepareStatement(sql);
+            result=st.executeQuery();
+            jTable2.setModel(DbUtils.resultSetToTableModel(result));
+        } catch (SQLException ex) {
+            Logger.getLogger(Homeservice.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return stgrList;
-    }
-     public void showecad(){
-        ArrayList<StagiaireListe> list = stgrList();
-        DefaultTableModel model =(DefaultTableModel)jTable1.getModel();
-        Object[] row =new Object [11];
-        for(int i=0;i<list.size();i++){
-            row[0]=list.get(i).getId();
-            row[1]=list.get(i).getNom();
-            row[2]=list.get(i).getPrenom();
-            row[3]=list.get(i).getCin();
-            row[4]=list.get(i).getTele();
-            row[5]=list.get(i).getAdress();
-            row[6]=list.get(i).getEta();
-            row[7]=list.get(i).getSpec();
-            row[8]=list.get(i).getEnca();
-            row[9]=list.get(i).getTp();
-            row[10]=list.get(i).getStag();
-                    
-            model.addRow(row);   
-        }   
-    }
+     }
    
   
 
@@ -78,57 +42,60 @@ public class Homestagiaire extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "NOM", "PRENOM", "CIN", "ADRESS", "TELEPHON", "ETABLISSEMENT", "SPECIALITE", "ENCADREMENTNom", "Encadrementprenom", "STAGE"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setText("CIN :");
 
         jButton1.setText("Search");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(2, 2, 2)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1)))
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1))
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -136,8 +103,8 @@ public class Homestagiaire extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

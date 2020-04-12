@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package login_form;
+import connection.ConnexionMysql;
 import home_page.Home_page;
 import java.awt.Color;
 import javax.swing.*;
@@ -16,18 +13,12 @@ import javax.swing.JOptionPane;
  */
 public class Lofin_Page extends javax.swing.JFrame {
     public Home_page home;
-    public Connection cn;
-    public Statement st;
+    public Connection cnx;
+    public PreparedStatement st;
+    public ResultSet result;
     public Lofin_Page() {
         initComponents();
-        try{
-           Class.forName("com.mysql.jdbc.Driver");
-           cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/gsdba","root","");
-           st=cn.createStatement();
-           
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Not Connected");
-        }
+        cnx=ConnexionMysql.ConnexionDB();
         this.setLocationRelativeTo(null);
     }
 
@@ -177,10 +168,11 @@ public class Lofin_Page extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String sql="select * from admin where Username= '"+jTextField1_Username.getText()+"'and Password = '"+String.valueOf(jPasswordField1_Password.getPassword())+"'";
         try{
-            String sql="select * from admin where Username= '"+jTextField1_Username.getText()+"'and Password = '"+String.valueOf(jPasswordField1_Password.getPassword())+"'";
-            ResultSet rss=st.executeQuery(sql);
-            if(rss.next()){
+            st =cnx.prepareStatement(sql);
+            result=st.executeQuery();
+            if(result.next()){
                 home=new Home_page();
                 home.setVisible(true);
                 this.dispose();
