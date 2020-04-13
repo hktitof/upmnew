@@ -1,21 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package stagepannels;
 
-/**
- *
- * @author ESSAKHI Hamza
- */
-public class Supprimerstage extends javax.swing.JPanel {
+import connection.ConnexionMysql;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import net.proteanit.sql.DbUtils;
 
-    /**
-     * Creates new form Supprimerstage
-     */
+public class Supprimerstage extends javax.swing.JPanel {
+    public Connection cnx;
+    public PreparedStatement st;
+    public ResultSet result;
     public Supprimerstage() {
         initComponents();
+        cnx=ConnexionMysql.ConnexionDB();
+        UpdateTable();
+        remplirComboBox();
     }
 
     /**
@@ -28,82 +32,161 @@ public class Supprimerstage extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        txt_serviceName = new javax.swing.JTextField();
         txt_interProject = new javax.swing.JTextField();
         txt_startDate = new javax.swing.JTextField();
         txt_endDate = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(580, 418));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Delete");
+        jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jButton1.setText("Supprimer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 100, 30));
+        add(txt_interProject, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 150, 30));
+        add(txt_startDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 150, 30));
+        add(txt_endDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 150, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel3.setText("Nom du service :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 130, 20));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel4.setText("Projet du stage :");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 130, 20));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel5.setText("Date début :");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 130, 20));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel2.setText("Date fin :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 130, 20));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "selectionner" }));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 150, 30));
+
+        jButton3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jButton3.setText("Actualiser");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, 90, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, 480, 120));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Delete stage.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(txt_serviceName, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(txt_interProject, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(txt_startDate, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(190, 190, 190)
-                .addComponent(txt_endDate, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(460, 460, 460)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(350, 350, 350)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txt_serviceName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(txt_interProject, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(txt_startDate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(txt_endDate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 380));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         int ligne=jTable1.getSelectedRow();
+        String id= jTable1.getModel().getValueAt(ligne, 0).toString();
+        String sql="delete from stage where stageId='"+id+"'";
+        try {
+            st=cnx.prepareStatement(sql);
+            st.execute();
+            JOptionPane.showMessageDialog(null, "le stage a été supprimé avec succès!");
+        } catch (SQLException ex) {
+            Logger.getLogger(Supprimerstage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        UpdateTable();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int ligne=jTable1.getSelectedRow();
+        String id= jTable1.getModel().getValueAt(ligne, 0).toString();
+        String sql="select * from stage where stageId = '"+ id+"'";
+        try {
+            st=cnx.prepareStatement(sql);
+            result=st.executeQuery();
+            if(result.next()){
+                jComboBox1.setSelectedItem(result.getString("stageService"));
+                txt_interProject.setText(result.getString("stageProjet"));
+                txt_startDate.setText(result.getString("stageDebut"));
+                txt_endDate.setText(result.getString("stageFin"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Supprimerstage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+           UpdateTable();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    public void UpdateTable(){
+         String sql="select * from stage";
+        try {
+            st=cnx.prepareStatement(sql);
+            result=st.executeQuery();
+            jTable1.setModel(DbUtils.resultSetToTableModel(result));
+        } catch (SQLException ex) {
+            Logger.getLogger(Supprimerstage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void remplirComboBox(){
+        String sql="select * from service";
+        try {
+            st=cnx.prepareStatement(sql);
+            result=st.executeQuery();
+            while(result.next()){
+                String nom=result.getString("serviceNom");
+                jComboBox1.addItem(nom);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Supprimerstage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txt_endDate;
     private javax.swing.JTextField txt_interProject;
-    private javax.swing.JTextField txt_serviceName;
     private javax.swing.JTextField txt_startDate;
     // End of variables declaration//GEN-END:variables
 }

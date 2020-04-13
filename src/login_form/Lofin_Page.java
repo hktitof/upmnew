@@ -31,7 +31,6 @@ public class Lofin_Page extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jTextField1_Username = new javax.swing.JTextField();
         jPasswordField1_Password = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
@@ -41,9 +40,6 @@ public class Lofin_Page extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("Doone is dooone");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
 
         jTextField1_Username.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 18)); // NOI18N
         jTextField1_Username.setForeground(new java.awt.Color(150, 150, 150));
@@ -222,7 +218,6 @@ public class Lofin_Page extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1_Password;
     private javax.swing.JTextField jTextField1_Username;

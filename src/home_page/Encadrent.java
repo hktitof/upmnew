@@ -95,6 +95,7 @@ public class Encadrent extends javax.swing.JPanel {
             }
         });
 
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/sssssssssssss.jpg"))); // NOI18N
         back.setText("back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
