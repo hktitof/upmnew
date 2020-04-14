@@ -134,6 +134,8 @@ public class Supprimerservice extends javax.swing.JPanel {
         try {
             st=cnx.prepareStatement(sql);
             st.execute();
+            jTextField1.setText("");
+            jTextField2.setText("");
             JOptionPane.showMessageDialog(null, "le service a été supprimé avec succès!");
         } catch (SQLException ex) {
             Logger.getLogger(Supprimerservice.class.getName()).log(Level.SEVERE, null, ex);

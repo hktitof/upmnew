@@ -42,23 +42,24 @@ public class Supprimerstagiaire extends javax.swing.JPanel {
         jComboBox2 = new javax.swing.JComboBox();
         jComboBox1 = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("Delete");
+        jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jButton1.setText("Supprimer ");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 88, 31));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 380, 110, 31));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Nom complet :");
@@ -105,6 +106,15 @@ public class Supprimerstagiaire extends javax.swing.JPanel {
         jLabel9.setText("Encadrent :");
         add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jButton2.setText("Actualiser ");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 163, 100, 30));
+
         jLabel10.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel10.setText("Spécialité :");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
@@ -129,10 +139,6 @@ public class Supprimerstagiaire extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 200, 510, 160));
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton2.setText("Actualiser ");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 163, 100, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Stagiare Delete.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -179,6 +185,10 @@ public class Supprimerstagiaire extends javax.swing.JPanel {
         }
         UpdateTable();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        UpdateTable();
+    }//GEN-LAST:event_jButton2ActionPerformed
     public void UpdateTable(){
          String sql="select * from stagiaire";
         try {

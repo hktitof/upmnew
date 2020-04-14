@@ -190,6 +190,8 @@ public class Modifierservice extends javax.swing.JPanel {
             st.setString(1, jTextField1.getText());
             st.setString(2, jTextField2.getText());
             st.execute();
+            jTextField1.setText("");
+            jTextField2.setText("");
             JOptionPane.showMessageDialog(null, "le service a été modifié avec succès!");
         } catch (SQLException ex) {
             Logger.getLogger(Modifierservice.class.getName()).log(Level.SEVERE, null, ex);

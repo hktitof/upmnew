@@ -34,7 +34,7 @@ public class Ajouterservice extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(580, 418));
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton1.setText("Ajouter");
@@ -43,8 +43,7 @@ public class Ajouterservice extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(440, 320, 90, 30);
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 90, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -56,8 +55,7 @@ public class Ajouterservice extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(40, 160, 490, 150);
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 490, 150));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton2.setText("actualier");
@@ -66,27 +64,21 @@ public class Ajouterservice extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2);
-        jButton2.setBounds(340, 320, 90, 30);
-        add(jTextField1);
-        jTextField1.setBounds(40, 110, 150, 30);
-        add(jTextField2);
-        jTextField2.setBounds(230, 110, 150, 30);
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 320, 90, 30));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 150, 30));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Chef du service:");
-        add(jLabel3);
-        jLabel3.setBounds(230, 80, 130, 20);
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 130, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel4.setText("Nom d'u service :");
-        add(jLabel4);
-        jLabel4.setBounds(40, 80, 130, 20);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 130, 20));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Service add.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        add(jLabel2);
-        jLabel2.setBounds(0, 0, 570, 380);
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 380));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
