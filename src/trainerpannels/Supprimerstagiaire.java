@@ -152,7 +152,7 @@ public class Supprimerstagiaire extends javax.swing.JPanel {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int ligne=jTable1.getSelectedRow();
         String id= jTable1.getModel().getValueAt(ligne, 0).toString();
-        String sql="select * from stagiaire where Id = '"+ id+"'";
+        String sql="select NomComplet,mail,NumTele,CIN,Etablissement,stageProjet,nomEnca,Specialite from stagiaire,encadrent,stage where Encadrent=idEnca and Projet=stageId and Id = '"+ id+"'";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();
@@ -162,8 +162,8 @@ public class Supprimerstagiaire extends javax.swing.JPanel {
                 jTextField4.setText(result.getString("NumTele"));
                 jTextField3.setText(result.getString("CIN"));
                 jTextField11.setText(result.getString("Etablissement"));
-                jComboBox2.setSelectedItem(result.getString("Projet"));
-                jComboBox1.setSelectedItem(result.getString("Encadrent"));
+                jComboBox2.setSelectedItem(result.getString("stageProjet"));
+                jComboBox1.setSelectedItem(result.getString("nomEnca"));
                 jTextField7.setText(result.getString("Specialite"));
                 
             }
@@ -184,13 +184,21 @@ public class Supprimerstagiaire extends javax.swing.JPanel {
             Logger.getLogger(Supprimerstagiaire.class.getName()).log(Level.SEVERE, null, ex);
         }
         UpdateTable();
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField4.setText("");
+            jTextField3.setText("");
+            jTextField11.setText("");
+            jTextField1.setText("");
+            jComboBox1.setSelectedItem("selectionner");
+            jComboBox2.setSelectedItem("selectionner");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         UpdateTable();
     }//GEN-LAST:event_jButton2ActionPerformed
     public void UpdateTable(){
-         String sql="select * from stagiaire";
+         String sql="select Id,NomComplet,mail,NumTele,CIN,Etablissement,stageProjet,nomEnca,Specialite from stagiaire,encadrent,stage where Projet=stageId and Encadrent=idEnca";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();

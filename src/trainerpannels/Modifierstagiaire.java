@@ -153,7 +153,7 @@ public class Modifierstagiaire extends javax.swing.JPanel {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int ligne=jTable1.getSelectedRow();
         String id= jTable1.getModel().getValueAt(ligne, 0).toString();
-        String sql="select * from stagiaire where Id = '"+ id+"'";
+        String sql="select NomComplet,mail,NumTele,CIN,Etablissement,stageProjet,nomEnca,Specialite from stagiaire,encadrent,stage where Encadrent=idEnca and Projet=stageId and Id = '"+ id+"'";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();
@@ -163,8 +163,8 @@ public class Modifierstagiaire extends javax.swing.JPanel {
                 jTextField4.setText(result.getString("NumTele"));
                 jTextField3.setText(result.getString("CIN"));
                 jTextField11.setText(result.getString("Etablissement"));
-                jComboBox2.setSelectedItem(result.getString("Projet"));
-                jComboBox1.setSelectedItem(result.getString("Encadrent"));
+                jComboBox2.setSelectedItem(result.getString("stageProjet"));
+                jComboBox1.setSelectedItem(result.getString("nomEnca"));
                 jTextField7.setText(result.getString("Specialite"));
                 
             }
@@ -177,22 +177,59 @@ public class Modifierstagiaire extends javax.swing.JPanel {
         int ligne=jTable1.getSelectedRow();
         String id= jTable1.getModel().getValueAt(ligne, 0).toString();
         String sql="update stagiaire set NomComplet = ? ,mail = ?,NumTele= ?,CIN = ?,Etablissement = ?,Projet = ?,Encadrent = ?,Specialite = ? where Id='"+id+"'";
+        String sql2="select idEnca from encadrent where nomEnca='"+jComboBox1.getSelectedItem().toString()+"'";
+        int idEnca = 0;
         try {
+            st=cnx.prepareStatement(sql2);
+            result=st.executeQuery();
+            if(result.next()){
+                 idEnca=result.getInt("idEnca");
+            }
+            //JOptionPane.showMessageDialog(null, "j'ai retourner lid enca"+idEnca+"");
+            } catch (SQLException ex) {
+            Logger.getLogger(Ajouterstagiaire.class.getName()).log(Level.SEVERE, null,ex);
+        }
+        String sql1="select stageId from stage where stageProjet='"+jComboBox2.getSelectedItem().toString()+"'";
+        int stageId = 0;
+        try {
+            st=cnx.prepareStatement(sql1);
+            result=st.executeQuery();
+            if(result.next()){
+                 stageId=result.getInt("stageId");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Ajouterstagiaire.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+        try {
+            if(!jTextField1.getText().equals("")&&!jTextField2.getText().equals("")&&!jTextField4.getText().equals("")&&!jTextField3.getText().equals("")&&!jTextField11.getText().equals("")&&!jComboBox2.getSelectedItem().toString().equals("Selectionner")&&!jComboBox1.getSelectedItem().toString().equals("Selectionner")&&!jTextField7.getText().equals("")){
             st=cnx.prepareStatement(sql);
             st.setString(1, jTextField1.getText());
             st.setString(2, jTextField2.getText());
             st.setString(3, jTextField4.getText());
             st.setString(4, jTextField3.getText());
             st.setString(5, jTextField11.getText());
-            st.setString(6, jComboBox2.getSelectedItem().toString());
-            st.setString(7, jComboBox1.getSelectedItem().toString());
+            st.setInt(6, stageId);
+            st.setInt(7, idEnca);
             st.setString(8, jTextField7.getText());
             st.execute();
             JOptionPane.showMessageDialog(null, "le stagiaire a été modifié avec succès!");
+            jTextField1.setText("");
+            jTextField2.setText("");
+            jTextField4.setText("");
+            jTextField3.setText("");
+            jTextField11.setText("");
+            jTextField7.setText("");
+            jComboBox1.setSelectedItem("selectionner");
+            jComboBox2.setSelectedItem("selectionner");
+            UpdateTable();
+            }else{
+            JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
+        }
+            
         } catch (SQLException ex) {
             Logger.getLogger(Modifierstagiaire.class.getName()).log(Level.SEVERE, null, ex);
         }
-        UpdateTable();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -200,7 +237,7 @@ public class Modifierstagiaire extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public void UpdateTable(){
-         String sql="select * from stagiaire";
+         String sql="select Id,NomComplet,mail,NumTele,CIN,Etablissement,stageProjet,nomEnca,Specialite from stagiaire,encadrent,stage where Projet=stageId and Encadrent=idEnca";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();

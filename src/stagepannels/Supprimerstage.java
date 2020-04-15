@@ -131,17 +131,17 @@ public class Supprimerstage extends javax.swing.JPanel {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         int ligne=jTable1.getSelectedRow();
         String id= jTable1.getModel().getValueAt(ligne, 0).toString();
-        String sql="select * from stage where stageId = '"+ id+"'";
+        String sql="select stageProjet,serviceNom,stageDebut,stageFin from stage,service where stageService=serviceId and stageId = '"+ id+"'";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();
             if(result.next()){
-                jComboBox1.setSelectedItem(result.getString("stageService"));
+                jComboBox1.setSelectedItem(result.getString("serviceNom"));
                 txt_interProject.setText(result.getString("stageProjet"));
                 txt_startDate.setText(result.getString("stageDebut"));
                 txt_endDate.setText(result.getString("stageFin"));
             }
-        } catch (SQLException ex) {
+        }catch (SQLException ex) {
             Logger.getLogger(Supprimerstage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jTable1MouseClicked
@@ -151,7 +151,7 @@ public class Supprimerstage extends javax.swing.JPanel {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public void UpdateTable(){
-         String sql="select * from stage";
+         String sql="select stageProjet,serviceNom,stageDebut,stageFin from stage,service where stageService=serviceId";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();

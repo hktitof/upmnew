@@ -193,10 +193,12 @@ public class Modifierservice extends javax.swing.JPanel {
             jTextField1.setText("");
             jTextField2.setText("");
             JOptionPane.showMessageDialog(null, "le service a été modifié avec succès!");
+            jTextField2.setText("");
+            jTextField1.setText("");
+            UpdateTable();
         } catch (SQLException ex) {
             Logger.getLogger(Modifierservice.class.getName()).log(Level.SEVERE, null, ex);
         }
-        UpdateTable();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

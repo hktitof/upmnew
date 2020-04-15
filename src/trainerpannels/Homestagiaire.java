@@ -21,7 +21,7 @@ public class Homestagiaire extends javax.swing.JPanel {
         UpdateTable();
     }
     public void UpdateTable(){
-         String sql="select NomComplet,mail,NumTele,CIN,Etablissement,Projet,Encadrent,Specialite from stagiaire";
+         String sql="select NomComplet,mail,NumTele,CIN,Etablissement,stageProjet,nomEnca,Specialite from stagiaire,encadrent,stage where Projet=stageId and Encadrent=idEnca";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();

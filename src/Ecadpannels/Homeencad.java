@@ -20,7 +20,7 @@ public final class Homeencad extends javax.swing.JPanel {
     }
     
     public void UpdateTable(){
-         String sql="select * from encadrent";
+         String sql="select nomEnca,mailEnca,teleEnca,nvHierarchique from encadrent";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();

@@ -253,17 +253,40 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
         String prj=jComboBox2.getSelectedItem().toString();
         String encad=jComboBox1.getSelectedItem().toString();
         String specia=jTextField5.getText();
+        String sql2="select idEnca from encadrent where nomEnca='"+jComboBox1.getSelectedItem().toString()+"'";
+        int idEnca = 0;
+        try {
+            st=cnx.prepareStatement(sql2);
+            result=st.executeQuery();
+            if(result.next()){
+                 idEnca=result.getInt("idEnca");
+            }
+            //JOptionPane.showMessageDialog(null, "j'ai retourner lid enca"+idEnca+"");
+            } catch (SQLException ex) {
+            Logger.getLogger(Ajouterstagiaire.class.getName()).log(Level.SEVERE, null,ex);
+        }
+        String sql1="select stageId from stage where stageProjet='"+jComboBox2.getSelectedItem().toString()+"'";
+        int stageId = 0;
+        try {
+            st=cnx.prepareStatement(sql1);
+            result=st.executeQuery();
+            if(result.next()){
+                 stageId=result.getInt("stageId");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Ajouterstagiaire.class.getName()).log(Level.SEVERE, null, ex);
+        } 
         String sql= "insert into stagiaire(NomComplet,mail,NumTele,CIN,Etablissement,Projet,Encadrent,Specialite) values(?,?,?,?,?,?,?,?)";
         try {
-            if(!nom.equals("")&&!mail.equals("")&&!tele.equals("")&&!cin.equals("")&&!etabl.equals("")&&!prj.equals("")&&!encad.equals("")&&!specia.equals("")){
+            if(!nom.equals("")&&!mail.equals("")&&!tele.equals("")&&!cin.equals("")&&!etabl.equals("")&&!prj.equals("Selectionner")&&!encad.equals("Selectionner")&&!specia.equals("")){
             st=cnx.prepareStatement(sql);
             st.setString(1, nom);
             st.setString(2, mail);
             st.setString(3, tele);
             st.setString(4, cin);
             st.setString(5, etabl);
-            st.setString(6, prj);
-            st.setString(7, encad);
+            st.setInt(6,stageId );
+            st.setInt(7, idEnca);
             st.setString(8, specia);
             st.execute();
             jTextField1.setText("");
@@ -290,7 +313,7 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
         UpdateTable();
     }//GEN-LAST:event_jButton2ActionPerformed
     public void UpdateTable(){
-         String sql="select * from stagiaire";
+         String sql="select Id,NomComplet,mail,NumTele,CIN,Etablissement,stageProjet,nomEnca,Specialite from stagiaire,encadrent,stage where Projet=stageId and Encadrent=idEnca";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();

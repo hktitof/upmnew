@@ -109,7 +109,7 @@ public class Ajouterservice extends javax.swing.JPanel {
         UpdateTable();
     }//GEN-LAST:event_jButton2ActionPerformed
       public void UpdateTable(){
-         String sql="select * from service";
+         String sql="select serviceNom,serviceChef from service";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();

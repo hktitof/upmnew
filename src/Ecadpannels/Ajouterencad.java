@@ -205,7 +205,7 @@ public class Ajouterencad extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
     public void UpdateTable(){
-         String sql="select * from encadrent";
+         String sql="select nomEnca,mailEnca,teleEnca,nvHierarchique from encadrent";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();

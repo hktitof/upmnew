@@ -27,7 +27,7 @@ public class Homestage extends javax.swing.JPanel {
     }
 
      public void UpdateTable(){
-         String sql="select * from stage";
+         String sql="select stageProjet,serviceNom,stageDebut,stageFin from stage,service where stageService=serviceId";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();
