@@ -21,6 +21,7 @@ public class Modifierstagiaire extends javax.swing.JPanel {
         UpdateTable();
         remplirComboBox1();
         remplirComboBox2();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -51,7 +52,7 @@ public class Modifierstagiaire extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 460));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(null);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton1.setText("Modifier");
@@ -60,57 +61,74 @@ public class Modifierstagiaire extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(456, 380, 100, 35));
+        add(jButton1);
+        jButton1.setBounds(456, 380, 100, 35);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Nom complet :");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
+        add(jLabel3);
+        jLabel3.setBounds(40, 40, 81, 15);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel4.setText("Adresse mail :");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
+        add(jLabel4);
+        jLabel4.setBounds(180, 40, 75, 15);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel5.setText("Numéro du téléphone :");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 140, -1));
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 130, 30));
+        add(jLabel5);
+        jLabel5.setBounds(320, 40, 140, 15);
+        add(jTextField1);
+        jTextField1.setBounds(40, 60, 130, 30);
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 130, 30));
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 130, 30));
+        add(jTextField2);
+        jTextField2.setBounds(180, 60, 130, 30);
+        add(jTextField4);
+        jTextField4.setBounds(320, 60, 130, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel6.setText("CIN :");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 130, 30));
-        add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 130, 30));
+        add(jLabel6);
+        jLabel6.setBounds(40, 90, 27, 15);
+        add(jTextField3);
+        jTextField3.setBounds(40, 110, 130, 30);
+        add(jTextField11);
+        jTextField11.setBounds(180, 110, 130, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel7.setText("Etablissement :");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+        add(jLabel7);
+        jLabel7.setBounds(180, 90, 83, 15);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel8.setText("Projet du stage :");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, -1, -1));
+        add(jLabel8);
+        jLabel8.setBounds(320, 90, 93, 15);
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selectionner" }));
-        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 130, 30));
+        add(jComboBox2);
+        jComboBox2.setBounds(320, 110, 130, 30);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selectionner" }));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 130, 30));
+        add(jComboBox1);
+        jComboBox1.setBounds(40, 160, 130, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel9.setText("Encadrent :");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        add(jLabel9);
+        jLabel9.setBounds(40, 140, 64, 15);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel10.setText("Spécialité :");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
-        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 130, 30));
+        add(jLabel10);
+        jLabel10.setBounds(180, 140, 59, 15);
+        add(jTextField7);
+        jTextField7.setBounds(180, 160, 130, 30);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -130,7 +148,8 @@ public class Modifierstagiaire extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 200, 510, 160));
+        add(jScrollPane1);
+        jScrollPane1.setBounds(32, 200, 510, 160);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton2.setText("Actualiser ");
@@ -139,11 +158,13 @@ public class Modifierstagiaire extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 163, 100, 30));
+        add(jButton2);
+        jButton2.setBounds(433, 163, 100, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Stagiare Modify copy.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 370));
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 570, 370);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -174,6 +195,7 @@ public class Modifierstagiaire extends javax.swing.JPanel {
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
         int ligne=jTable1.getSelectedRow();
         String id= jTable1.getModel().getValueAt(ligne, 0).toString();
         String sql="update stagiaire set NomComplet = ? ,mail = ?,NumTele= ?,CIN = ?,Etablissement = ?,Projet = ?,Encadrent = ?,Specialite = ? where Id='"+id+"'";

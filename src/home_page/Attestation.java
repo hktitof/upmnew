@@ -6,19 +6,40 @@
 package home_page;
 
 
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import connection.ConnexionMysql;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author latifa
  */
 public class Attestation extends javax.swing.JPanel {
-
-    /**
-     * Creates new form Attestation
-     */
+    public Connection cnx;
+    public PreparedStatement st;
+    public ResultSet result;
     public Attestation() {
         initComponents();
+        cnx=ConnexionMysql.ConnexionDB();
     }
 
     /**
@@ -34,7 +55,21 @@ public class Attestation extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        textCin = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 460));
@@ -44,7 +79,7 @@ public class Attestation extends javax.swing.JPanel {
         add(jLabel2);
         jLabel2.setBounds(23, 59, 18, 14);
         add(jTextField1);
-        jTextField1.setBounds(59, 53, 145, 20);
+        jTextField1.setBounds(59, 43, 145, 30);
 
         jButton1.setText("Annuler");
         add(jButton1);
@@ -59,21 +94,141 @@ public class Attestation extends javax.swing.JPanel {
         add(jButton2);
         jButton2.setBounds(408, 402, 75, 32);
 
-        jLabel1.setText("........");
-        add(jLabel1);
-        jLabel1.setBounds(400, 130, 32, 14);
+        jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel3.setText("Nom complet :");
+        add(jLabel3);
+        jLabel3.setBounds(30, 110, 81, 15);
+        add(jTextField2);
+        jTextField2.setBounds(30, 130, 150, 30);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel6.setText("CIN :");
+        add(jLabel6);
+        jLabel6.setBounds(190, 110, 27, 15);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel8.setText("Projet du stage :");
+        add(jLabel8);
+        jLabel8.setBounds(370, 110, 93, 15);
+        add(jTextField5);
+        jTextField5.setBounds(190, 190, 170, 30);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel9.setText("Chef de service :");
+        add(jLabel9);
+        jLabel9.setBounds(30, 170, 110, 20);
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel7.setText("Date début :");
+        add(jLabel7);
+        jLabel7.setBounds(370, 170, 130, 20);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel4.setText("date fin :");
+        add(jLabel4);
+        jLabel4.setBounds(30, 230, 130, 20);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        jLabel5.setText("Nom du service :");
+        add(jLabel5);
+        jLabel5.setBounds(190, 170, 130, 20);
+
+        jButton3.setText("Rechercher");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        add(jButton3);
+        jButton3.setBounds(230, 40, 90, 30);
+        add(textCin);
+        textCin.setBounds(190, 130, 170, 30);
+        add(jTextField7);
+        jTextField7.setBounds(370, 130, 150, 30);
+        add(jTextField8);
+        jTextField8.setBounds(30, 190, 150, 30);
+        add(jTextField3);
+        jTextField3.setBounds(370, 190, 150, 30);
+        add(jTextField4);
+        jTextField4.setBounds(30, 250, 150, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       
+        Document doc=new Document();
+        try {
+            PdfWriter.getInstance(doc, new FileOutputStream("hello.pdf"));
+            doc.open();
+            doc.add(new Paragraph("                                              Agadir, le 08/02/2020"));
+            
+            doc.add(new Paragraph("                   Attestation de Stage ",FontFactory.getFont(FontFactory.TIMES_BOLD,28,Font.BOLD,BaseColor.GRAY))); 
+            
+            doc.add(new Paragraph("\n"+
+"\n"+
+"Je soussigné, "+jTextField8.getText()+" responsable du service "+jTextField5.getText()+" de la société HLA , rue du chien qui fume à Toulouse, certifie que "+jTextField2.getText()+" a effectué un stage en service "+jTextField5.getText()+"\n"+" pendant la période allant du: "+jTextField3.getText()+" au "+jTextField4.getText()+"\n" +
+"Par son enthousiasme, créativité, rigueur et ses qualités professionnelles et humaines, "+jTextField2.getText()+""+
+"\n"+
+" a rempli tous les objectifs de son stage. Sa présence et ses réalisations ont été satisfaisantes à tous points de vue.\n" +
+"\n" +
+"Fait à Toulouse, +DateOfDay+\n" +
+"\n" +
+"Pour servir et valoir ce que de droit.\n" +
+"\n" +
+"\n" +
+"(signature) + (tampon de l'entreprise)\n" +
+"",FontFactory.getFont(FontFactory.TIMES_ROMAN,20,Font.UNDEFINED,BaseColor.BLACK)));
+            doc.close();
+            Desktop.getDesktop().open(new File("hello.pdf"));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Attestation.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException | IOException ex) {
+            Logger.getLogger(Attestation.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int n=0;
+        String sql2="select NomComplet,CIN,stageProjet,serviceChef,serviceNom,stageDebut,stageFin from stagiaire,stage,service where CIN='"+jTextField1.getText()+"' and Projet=stageId and stageService=serviceId";
+        try {
+            st=cnx.prepareStatement(sql2);
+            result=st.executeQuery();
+            if(result.next()){
+                jTextField2.setText(result.getString("NomComplet"));
+                textCin.setText(result.getString("CIN"));
+                jTextField7.setText(result.getString("stageProjet"));
+                jTextField8.setText(result.getString("serviceChef"));
+                jTextField5.setText(result.getString("serviceNom"));
+                jTextField3.setText(result.getString("stageDebut"));
+                jTextField4.setText(result.getString("stageFin"));
+                n++;
+            }
+            if(n==0){
+                JOptionPane.showMessageDialog(null, "Aucun stagiaire avec CIN: '"+jTextField1.getText()+"'");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Attestation.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField textCin;
     // End of variables declaration//GEN-END:variables
 }
