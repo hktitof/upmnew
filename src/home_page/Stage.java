@@ -90,14 +90,16 @@ public class Stage extends javax.swing.JPanel {
             .addGap(0, 418, Short.MAX_VALUE)
         );
 
-        ajouter.setText("Add");
+        ajouter.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        ajouter.setText("Ajouter");
         ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ajouterActionPerformed(evt);
             }
         });
 
-        modifier.setText("Modify");
+        modifier.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        modifier.setText("Modifier");
         modifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modifierActionPerformed(evt);
@@ -112,7 +114,8 @@ public class Stage extends javax.swing.JPanel {
             }
         });
 
-        supprimer.setText("Delete");
+        supprimer.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        supprimer.setText("Supprimer");
         supprimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 supprimerActionPerformed(evt);

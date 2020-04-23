@@ -5,6 +5,8 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -88,14 +90,24 @@ public class Ajouterservice extends javax.swing.JPanel {
         String sql= "insert into service(serviceNom,serviceChef) values(?,?)";
         try {
             if(!Nomsrv.equals("")&&!chef.equals("")){
-            st=cnx.prepareStatement(sql);
-            st.setString(1, Nomsrv);
-            st.setString(2, chef);
-            st.execute();
-            jTextField1.setText("");
-            jTextField2.setText("");
-            JOptionPane.showMessageDialog(null, "Service ajouté avec succès!");
-            UpdateTable();
+                Pattern patt1 = Pattern.compile("^[a-zA-Z àâäéèêëîïôöûü]+$");
+                Matcher m1 = patt1.matcher(Nomsrv);
+                Matcher m2 = patt1.matcher(chef);
+                if (m1.find()&& m2.find()){   
+                   
+                    st=cnx.prepareStatement(sql);
+                    st.setString(1, Nomsrv);
+                    st.setString(2, chef);
+                    st.execute();
+                    jTextField1.setText("");
+                    jTextField2.setText("");
+                    JOptionPane.showMessageDialog(null, "Service ajouté avec succès!");
+                    UpdateTable();
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Les champs de saisi doivent pas contenir que des lettres");
+                }
+            
             }else{
                 JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
             }

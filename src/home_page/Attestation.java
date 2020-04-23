@@ -25,6 +25,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -73,84 +75,69 @@ public class Attestation extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 460));
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("CIN");
-        add(jLabel2);
-        jLabel2.setBounds(23, 59, 18, 14);
-        add(jTextField1);
-        jTextField1.setBounds(59, 43, 145, 30);
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("CIN :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 59, -1, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 43, 145, 30));
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton1.setText("Annuler");
-        add(jButton1);
-        jButton1.setBounds(501, 402, 69, 32);
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(501, 402, -1, 32));
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton2.setText("Imprimer");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2);
-        jButton2.setBounds(408, 402, 75, 32);
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(408, 402, -1, 32));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Nom complet :");
-        add(jLabel3);
-        jLabel3.setBounds(30, 110, 81, 15);
-        add(jTextField2);
-        jTextField2.setBounds(30, 130, 150, 30);
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 150, 30));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel6.setText("CIN :");
-        add(jLabel6);
-        jLabel6.setBounds(190, 110, 27, 15);
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel8.setText("Projet du stage :");
-        add(jLabel8);
-        jLabel8.setBounds(370, 110, 93, 15);
-        add(jTextField5);
-        jTextField5.setBounds(190, 190, 170, 30);
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, -1, -1));
+        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 170, 30));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel9.setText("Chef de service :");
-        add(jLabel9);
-        jLabel9.setBounds(30, 170, 110, 20);
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 110, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel7.setText("Date début :");
-        add(jLabel7);
-        jLabel7.setBounds(370, 170, 130, 20);
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 130, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel4.setText("date fin :");
-        add(jLabel4);
-        jLabel4.setBounds(30, 230, 130, 20);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 130, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel5.setText("Nom du service :");
-        add(jLabel5);
-        jLabel5.setBounds(190, 170, 130, 20);
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 130, 20));
 
+        jButton3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton3.setText("Rechercher");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        add(jButton3);
-        jButton3.setBounds(230, 40, 90, 30);
-        add(textCin);
-        textCin.setBounds(190, 130, 170, 30);
-        add(jTextField7);
-        jTextField7.setBounds(370, 130, 150, 30);
-        add(jTextField8);
-        jTextField8.setBounds(30, 190, 150, 30);
-        add(jTextField3);
-        jTextField3.setBounds(370, 190, 150, 30);
-        add(jTextField4);
-        jTextField4.setBounds(30, 250, 150, 30);
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 40, 110, 30));
+        add(textCin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 170, 30));
+        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 150, 30));
+        add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 150, 30));
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, 150, 30));
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 150, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -158,24 +145,28 @@ public class Attestation extends javax.swing.JPanel {
         try {
             PdfWriter.getInstance(doc, new FileOutputStream("hello.pdf"));
             doc.open();
-            doc.add(new Paragraph("                                              Agadir, le 08/02/2020"));
-            
-            doc.add(new Paragraph("                   Attestation de Stage ",FontFactory.getFont(FontFactory.TIMES_BOLD,28,Font.BOLD,BaseColor.GRAY))); 
+            String format = "dd/MM/yy H:mm:ss";
+            java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat( format );
+            java.util.Date date = new java.util.Date();
+            doc.add(new Paragraph("                   Attestation de Stage ",FontFactory.getFont(FontFactory.TIMES_BOLD,28,Font.BOLD,BaseColor.BLUE))); 
             
             doc.add(new Paragraph("\n"+
 "\n"+
-"Je soussigné, "+jTextField8.getText()+" responsable du service "+jTextField5.getText()+" de la société HLA , rue du chien qui fume à Toulouse, certifie que "+jTextField2.getText()+" a effectué un stage en service "+jTextField5.getText()+"\n"+" pendant la période allant du: "+jTextField3.getText()+" au "+jTextField4.getText()+"\n" +
-"Par son enthousiasme, créativité, rigueur et ses qualités professionnelles et humaines, "+jTextField2.getText()+""+
+"Je soussigné, "+jTextField8.getText()+" responsable du service "+jTextField5.getText()+" de la société EntrepriseName , rue 18 Novembre, Quartier Industriel Agadir, certifie que "+jTextField2.getText()+" a effectué un stage en service "+jTextField5.getText()+"\n"+" pendant la période allant du: "+jTextField3.getText()+" au "+jTextField4.getText()+"\n" +
+"Par son enthousiasme, créativité, rigueur et ses qualités professionnelles et humaines, "+jTextField2.getText()+" a rempli tous"+
 "\n"+
-" a rempli tous les objectifs de son stage. Sa présence et ses réalisations ont été satisfaisantes à tous points de vue.\n" +
+ "les objectifs de son stage. Sa présence et ses réalisations ont été satisfaisantes à tous points de vue.\n" +
 "\n" +
-"Fait à Toulouse, +DateOfDay+\n" +
+"Fait à Agadir," +formater.format( date )+
 "\n" +
 "Pour servir et valoir ce que de droit.\n" +
 "\n" +
 "\n" +
-"(signature) + (tampon de l'entreprise)\n" +
+"signature \n \n \n \n" +
 "",FontFactory.getFont(FontFactory.TIMES_ROMAN,20,Font.UNDEFINED,BaseColor.BLACK)));
+            Image img =Image.getInstance("C:\\Users\\hp\\Desktop\\projetTutoù\\18.04..16.06\\upmnew\\src\\pdf\\w.jpg");
+            img.setAlignment(Image.ALIGN_CENTER);
+            doc.add(img);
             doc.close();
             Desktop.getDesktop().open(new File("hello.pdf"));
         } catch (FileNotFoundException ex) {

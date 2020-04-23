@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -52,6 +54,7 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(153, 0, 153));
         setRequestFocusEnabled(false);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton1.setText("Ajouter ");
@@ -60,40 +63,57 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 380, 91, 35));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 130, 30));
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 130, 30));
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 130, 30));
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 130, 30));
+        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 130, 30));
+        add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 130, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Nom complet :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel4.setText("Adresse mail :");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel5.setText("Numéro du téléphone :");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel6.setText("CIN :");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel7.setText("Etablissement :");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel8.setText("Projet du stage :");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel9.setText("Encadrent :");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel10.setText("Spécialité :");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selectionner" }));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 130, 30));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selectionner" }));
+        add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 130, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,6 +128,8 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 200, 510, 160));
+
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton2.setText("Actualiser ");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -115,129 +137,11 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(433, 163, 100, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Stagiare Add.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(320, 320, 320)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jLabel7))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel6))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel9))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(320, 320, 320)
-                .addComponent(jLabel8))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(180, 180, 180)
-                .addComponent(jLabel4))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(433, 433, 433)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel3))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(470, 470, 470)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel10))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel5)
-                        .addGap(55, 55, 55)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jLabel8))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel3))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 580, 370));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -279,27 +183,60 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
         String sql= "insert into stagiaire(NomComplet,mail,NumTele,CIN,Etablissement,Projet,Encadrent,Specialite) values(?,?,?,?,?,?,?,?)";
         try {
             if(!nom.equals("")&&!mail.equals("")&&!tele.equals("")&&!cin.equals("")&&!etabl.equals("")&&!prj.equals("Selectionner")&&!encad.equals("Selectionner")&&!specia.equals("")){
-            st=cnx.prepareStatement(sql);
-            st.setString(1, nom);
-            st.setString(2, mail);
-            st.setString(3, tele);
-            st.setString(4, cin);
-            st.setString(5, etabl);
-            st.setInt(6,stageId );
-            st.setInt(7, idEnca);
-            st.setString(8, specia);
-            st.execute();
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jTextField4.setText("");
-            jTextField3.setText("");
-            jTextField11.setText("");
-            jTextField5.setText("");
-            jComboBox1.setSelectedItem("selectionner");
-            jComboBox2.setSelectedItem("selectionner");
-            
-            JOptionPane.showMessageDialog(null, "stagiaire ajouté avec succès!");
-            UpdateTable();
+            Pattern patt1 = Pattern.compile("^[a-zA-Z àâäéèêëîïôöûü]+$");
+            Pattern patt2 = Pattern.compile("^[0123456789]+$");
+            Pattern patt3 = Pattern.compile("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)+$");
+            Pattern patt4 = Pattern.compile("^[a-zA-Z 0123456789]+$");
+            Matcher m1 = patt1.matcher(nom);
+            Matcher m2 = patt1.matcher(etabl);
+            Matcher m3 = patt1.matcher(specia);
+            Matcher m4 = patt2.matcher(tele);
+            Matcher m5 = patt3.matcher(mail);
+            Matcher m6 = patt4.matcher(cin);
+            if (m1.find()){
+                if(m2.find()){
+                    if(m3.find()){
+                        if(m4.find()){
+                            if(m5.find()){
+                                if(m6.find()){
+                                    st=cnx.prepareStatement(sql);
+                                    st.setString(1, nom);
+                                    st.setString(2, mail);
+                                    st.setString(3, tele);
+                                    st.setString(4, cin);
+                                    st.setString(5, etabl);
+                                    st.setInt(6,stageId );
+                                    st.setInt(7, idEnca);
+                                    st.setString(8, specia);
+                                    st.execute();
+                                    JOptionPane.showMessageDialog(null, "stagiaire ajouté avec succès!");
+                                    jTextField1.setText("");
+                                    jTextField2.setText("");
+                                    jTextField4.setText("");
+                                    jTextField3.setText("");
+                                    jTextField11.setText("");
+                                    jTextField5.setText("");
+                                    jComboBox1.setSelectedItem("selectionner");
+                                    jComboBox2.setSelectedItem("selectionner");
+                                    UpdateTable();
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Veulliez saisir un CIN  valide");
+                                }
+                            }else{
+                               JOptionPane.showMessageDialog(null, "Veulliez saisir un adresse mail valide"); 
+                            }
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Le numéro de téléphone doit pas contenir que des chiffres");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Le nom de la spécialité doit pas contenir que des lettres");
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Le nom de l'établissement doit pas contenir que des lettres");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Le nom du stagiaire doit pas contenir que des lettres");
+            } 
             }else{
                 JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
             }

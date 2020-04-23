@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -51,6 +53,7 @@ public class Modifierservice extends javax.swing.JPanel {
                 formMouseClicked(evt);
             }
         });
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton1.setText("Modifier");
@@ -59,6 +62,7 @@ public class Modifierservice extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 320, 89, 30));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton2.setText("actualier");
@@ -67,6 +71,7 @@ public class Modifierservice extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, 30));
 
         jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -92,66 +97,21 @@ public class Modifierservice extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tableEditService);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 490, 150));
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel4.setText("Nom d'u service :");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 130, 20));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 150, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Chef du service:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 130, 20));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Service Modify.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(350, 350, 350)
-                .addComponent(jButton2))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(440, 440, 440)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(320, 320, 320)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 370));
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
@@ -186,16 +146,26 @@ public class Modifierservice extends javax.swing.JPanel {
         String id= tableEditService.getModel().getValueAt(ligne, 0).toString();
         String sql="update service set serviceNom = ? ,serviceChef = ? where serviceId='"+id+"'";
         try {
-            st=cnx.prepareStatement(sql);
-            st.setString(1, jTextField1.getText());
-            st.setString(2, jTextField2.getText());
-            st.execute();
-            jTextField1.setText("");
-            jTextField2.setText("");
-            JOptionPane.showMessageDialog(null, "le service a été modifié avec succès!");
-            jTextField2.setText("");
-            jTextField1.setText("");
-            UpdateTable();
+            if(!jTextField1.getText().equals("")&&!jTextField2.getText().equals("")){
+                Pattern patt1 = Pattern.compile("^[a-zA-Z àâäéèêëîïôöûü]+$");
+                Matcher m1 = patt1.matcher(jTextField1.getText());
+                Matcher m2 = patt1.matcher(jTextField2.getText());
+                if (m1.find()&& m2.find()){  
+                    st=cnx.prepareStatement(sql);
+                    st.setString(1, jTextField1.getText());
+                    st.setString(2, jTextField2.getText());
+                    st.execute();
+                    JOptionPane.showMessageDialog(null, "le service a été modifié avec succès!");
+                    jTextField2.setText("");
+                    jTextField1.setText("");
+                    UpdateTable();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Les champs de saisi doivent pas contenir que des lettres");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
+            }
+            
         } catch (SQLException ex) {
             Logger.getLogger(Modifierservice.class.getName()).log(Level.SEVERE, null, ex);
         }

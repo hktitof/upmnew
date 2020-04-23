@@ -145,7 +145,7 @@ public class Home_page extends javax.swing.JFrame {
 
         jLabel_encadrent.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jLabel_encadrent.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_encadrent.setText("Encadent");
+        jLabel_encadrent.setText("Encadrent");
         jLabel_encadrent.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel_encadrentMouseClicked(evt);

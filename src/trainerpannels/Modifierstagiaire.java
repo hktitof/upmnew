@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -224,26 +226,61 @@ public class Modifierstagiaire extends javax.swing.JPanel {
         } 
         try {
             if(!jTextField1.getText().equals("")&&!jTextField2.getText().equals("")&&!jTextField4.getText().equals("")&&!jTextField3.getText().equals("")&&!jTextField11.getText().equals("")&&!jComboBox2.getSelectedItem().toString().equals("Selectionner")&&!jComboBox1.getSelectedItem().toString().equals("Selectionner")&&!jTextField7.getText().equals("")){
-            st=cnx.prepareStatement(sql);
-            st.setString(1, jTextField1.getText());
-            st.setString(2, jTextField2.getText());
-            st.setString(3, jTextField4.getText());
-            st.setString(4, jTextField3.getText());
-            st.setString(5, jTextField11.getText());
-            st.setInt(6, stageId);
-            st.setInt(7, idEnca);
-            st.setString(8, jTextField7.getText());
-            st.execute();
-            JOptionPane.showMessageDialog(null, "le stagiaire a été modifié avec succès!");
-            jTextField1.setText("");
-            jTextField2.setText("");
-            jTextField4.setText("");
-            jTextField3.setText("");
-            jTextField11.setText("");
-            jTextField7.setText("");
-            jComboBox1.setSelectedItem("selectionner");
-            jComboBox2.setSelectedItem("selectionner");
-            UpdateTable();
+             Pattern patt1 = Pattern.compile("^[a-zA-Z àâäéèêëîïôöûü]+$");
+            Pattern patt2 = Pattern.compile("^[0123456789]+$");
+            Pattern patt3 = Pattern.compile("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)+$");
+            Pattern patt4 = Pattern.compile("^[a-zA-Z 0123456789]+$");
+            Matcher m1 = patt1.matcher(jTextField1.getText());
+            Matcher m2 = patt1.matcher(jTextField11.getText());
+            Matcher m3 = patt1.matcher(jTextField7.getText());
+            Matcher m4 = patt2.matcher(jTextField4.getText());
+            Matcher m5 = patt3.matcher(jTextField2.getText());
+            Matcher m6 = patt4.matcher(jTextField3.getText());
+            if (m1.find()){
+                if(m2.find()){
+                    if(m3.find()){
+                        if(m4.find()){
+                            if(m5.find()){
+                                if(m6.find()){
+                                    st=cnx.prepareStatement(sql);
+                                    st.setString(1, jTextField1.getText());
+                                    st.setString(2, jTextField2.getText());
+                                    st.setString(3, jTextField4.getText());
+                                    st.setString(4, jTextField3.getText());
+                                    st.setString(5, jTextField11.getText());
+                                    st.setInt(6, stageId);
+                                    st.setInt(7, idEnca);
+                                    st.setString(8, jTextField7.getText());
+                                    st.execute();
+                                    JOptionPane.showMessageDialog(null, "le stagiaire a été modifié avec succès!");
+                                    jTextField1.setText("");
+                                    jTextField2.setText("");
+                                    jTextField4.setText("");
+                                    jTextField3.setText("");
+                                    jTextField11.setText("");
+                                    jTextField7.setText("");
+                                    jComboBox1.setSelectedItem("selectionner");
+                                    jComboBox2.setSelectedItem("selectionner");
+                                    UpdateTable();
+                                }else{
+                                    JOptionPane.showMessageDialog(null, "Veulliez saisir un CIN  valide");
+                                }
+                            }else{
+                               JOptionPane.showMessageDialog(null, "Veulliez saisir un adresse mail valide"); 
+                            }
+                        }else{
+                            JOptionPane.showMessageDialog(null, "Le numéro de téléphone doit pas contenir que des chiffres");
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Le nom de la spécialité doit pas contenir que des lettres");
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null, "Le nom de l'établissement doit pas contenir que des lettres");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Le nom du stagiaire doit pas contenir que des lettres");
+            }
+               
             }else{
             JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
         }

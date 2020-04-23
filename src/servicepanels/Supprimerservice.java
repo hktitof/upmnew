@@ -71,7 +71,7 @@ public class Supprimerservice extends javax.swing.JPanel {
         jScrollPane1.setBounds(40, 160, 490, 150);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton1.setText("Delete");
+        jButton1.setText("Supprimer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

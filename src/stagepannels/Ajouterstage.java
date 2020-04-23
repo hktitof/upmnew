@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -139,19 +141,26 @@ public class Ajouterstage extends javax.swing.JPanel {
         }
         String sql= "insert into stage(stageProjet,stageService,stageDebut,stageFin) values(?,?,?,?)";
         try {
-            if(!projet.equals("")&&!service.equals("")&&!debut.equals("")&&!fin.equals("")){
-            st=cnx.prepareStatement(sql);
-            st.setString(1, projet);
-            st.setInt(2, serviceId);
-            st.setString(3, debut);
-            st.setString(4, fin);
-            st.execute();
-            txt_internshipProject.setText("");
-            jComboBox1.setSelectedItem("selectionner");
-            jFormattedTextField1.setText("");
-            jFormattedTextField2.setText("");
-            JOptionPane.showMessageDialog(null, "stage ajouté avec succès!");
-            UpdateTable();
+            if(!projet.equals("")&&!service.equals("selectionner")&&!debut.equals("")&&!fin.equals("")){
+                Pattern patt1 = Pattern.compile("^[a-zA-Z àâäéèêëîïôöûü]+$");
+                Matcher m1 = patt1.matcher(projet);
+                 if (m1.find()){
+                    st=cnx.prepareStatement(sql);
+                    st.setString(1, projet);
+                    st.setInt(2, serviceId);
+                    st.setString(3, debut);
+                    st.setString(4, fin);
+                    st.execute();
+                    txt_internshipProject.setText("");
+                    jComboBox1.setSelectedItem("selectionner");
+                    jFormattedTextField1.setText("");
+                    jFormattedTextField2.setText("");
+                    JOptionPane.showMessageDialog(null, "stage ajouté avec succès!");
+                    UpdateTable();
+                 }else{
+                     JOptionPane.showMessageDialog(null, "Le nom du projet doit pas contenir que des lettres");
+                 }
+            
             }else{
                 JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
             }

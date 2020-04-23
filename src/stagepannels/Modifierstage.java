@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import net.proteanit.sql.DbUtils;
 
@@ -31,16 +33,15 @@ public class Modifierstage extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton1.setText("Modifier");
@@ -49,26 +50,44 @@ public class Modifierstage extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 88, 31));
-        add(txt_internshipProject, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 150, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Nom du service :");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 130, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel4.setText("Projet du stage :");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 130, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel5.setText("Date début :");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 130, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel2.setText("date fin :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 130, 20));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jButton3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jButton3.setText("Actualiser");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "selectionner" }));
+
+        try {
+            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        try {
+            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jFormattedTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -79,78 +98,125 @@ public class Modifierstage extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                jTable2MouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 500, 110));
-
-        jButton3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton3.setText("Actualiser");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 90, 30));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "selectionner" }));
-        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 150, 30));
-
-        try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 150, 30));
-
-        try {
-            jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jFormattedTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        add(jFormattedTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 150, 30));
+        jScrollPane1.setViewportView(jTable2);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Stage Modify.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 380));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(txt_internshipProject, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(450, 450, 450)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(230, 230, 230)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(360, 360, 360)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(txt_internshipProject, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(320, 320, 320)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(320, 320, 320)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        int ligne=jTable1.getSelectedRow();
-        String id= jTable1.getModel().getValueAt(ligne, 0).toString();
-        String sql="select stageProjet,serviceNom,stageDebut,stageFin from stage,service where stageService=serviceId and stageId = '"+ id+"'";
-        try {
-            st=cnx.prepareStatement(sql);
-            result=st.executeQuery();
-            if(result.next()){
-                jComboBox1.setSelectedItem(result.getString("serviceNom"));
-                txt_internshipProject.setText(result.getString("stageProjet"));
-                jFormattedTextField1.setText(result.getString("stageDebut"));
-                jFormattedTextField2.setText(result.getString("stageFin"));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Modifierstage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jTable1MouseClicked
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int ligne=jTable1.getSelectedRow();
-        String id= jTable1.getModel().getValueAt(ligne, 0).toString();
+        String projet=txt_internshipProject.getText();
+        String service=jComboBox1.getSelectedItem().toString();
+        String debut=jFormattedTextField1.getText();
+        String fin=jFormattedTextField2.getText();
+        int ligne=jTable2.getSelectedRow();
+        String id= jTable2.getModel().getValueAt(ligne, 0).toString();
         String sql="update stage set stageService = ? ,stageProjet = ?,stageDebut= ?,stageFin = ? where stageId='"+id+"'";
         try {
-            st=cnx.prepareStatement(sql);
-            st.setString(1, jComboBox1.getSelectedItem().toString());
-            st.setString(2, txt_internshipProject.getText());
-            st.setString(3, jFormattedTextField1.getText());
-            st.setString(4, jFormattedTextField2.getText());
-            st.execute();
-            JOptionPane.showMessageDialog(null, "le stage a été modifié avec succès!");
+            if(!projet.equals("")&&!service.equals("selectionner")&&!debut.equals("")&&!fin.equals("")){
+                Pattern patt1 = Pattern.compile("^[a-zA-Z àâäéèêëîïôöûü]+$");
+                Matcher m1 = patt1.matcher(projet);
+                 if (m1.find()){
+                    st=cnx.prepareStatement(sql);
+                    st.setString(1, jComboBox1.getSelectedItem().toString());
+                    st.setString(2, txt_internshipProject.getText());
+                    st.setString(3, jFormattedTextField1.getText());
+                    st.setString(4, jFormattedTextField2.getText());
+                    st.execute();
+                    txt_internshipProject.setText("");
+                    jComboBox1.setSelectedItem("selectionner");
+                    jFormattedTextField1.setText("");
+                    jFormattedTextField2.setText("");
+                    JOptionPane.showMessageDialog(null, "le stage a été modifié avec succès!");
+                 }else{
+                     JOptionPane.showMessageDialog(null, "Le nom du projet doit pas contenir que des lettres");
+                 }
+            }else{
+                JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
+            }
+            
         } catch (SQLException ex) {
             Logger.getLogger(Modifierstage.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -160,12 +226,31 @@ public class Modifierstage extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         UpdateTable();
     }//GEN-LAST:event_jButton3ActionPerformed
-    public void UpdateTable(){
-         String sql="select * from stage,service where stageService=serviceId";
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        int ligne=jTable2.getSelectedRow();
+        String id= jTable2.getModel().getValueAt(ligne, 0).toString();
+        String sql="select stageProjet,serviceNom,stageDebut,stageFin from stage,service where stageService=serviceId and stageId = '"+ id+"'";
         try {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();
-            jTable1.setModel(DbUtils.resultSetToTableModel(result));
+            if(result.next()){
+                jComboBox1.setSelectedItem(result.getString("serviceNom"));
+                txt_internshipProject.setText(result.getString("stageProjet"));
+                jFormattedTextField1.setText(result.getString("stageDebut"));
+                jFormattedTextField2.setText(result.getString("stageFin"));
+               
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "requet failed");
+        }
+    }//GEN-LAST:event_jTable2MouseClicked
+    public void UpdateTable(){
+         String sql="select stageId,stageProjet,serviceNom,stageDebut,stageFin from stage,service where stageService=serviceId";
+        try {
+            st=cnx.prepareStatement(sql);
+            result=st.executeQuery();
+            jTable2.setModel(DbUtils.resultSetToTableModel(result));
         } catch (SQLException ex) {
             Logger.getLogger(Ajouterstage.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -196,7 +281,7 @@ public class Modifierstage extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     private javax.swing.JTextField txt_internshipProject;
     // End of variables declaration//GEN-END:variables
 }
