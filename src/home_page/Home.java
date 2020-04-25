@@ -1,26 +1,39 @@
 
 package home_page;
 
-import connection.ConnexionMysql;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import home.absence;
+import home.mails;
+import home.profil;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import login_form.Lofin_Page;
 
-import net.proteanit.sql.DbUtils;
 
 public class Home extends javax.swing.JPanel {
-    public Connection cnx;
-    public PreparedStatement st;
-    public ResultSet result;
+    GridBagLayout layout = new GridBagLayout();
+    absence ab;
+    profil pr;
+    mails mail;
+    
     public Home() {
         initComponents();
-        cnx=ConnexionMysql.ConnexionDB();
-        UpdateTable();
-        remplirComboBox();
+        ab=new absence();
+        pr= new profil();
+        mail =new mails();
+        jPanel1.setLayout(layout);
+        GridBagConstraints c= new GridBagConstraints();
+        c.gridx=0;
+        c.gridy=0;
+        jPanel1.add(ab,c);
+        c.gridx=0;
+        c.gridy=0;
+        jPanel1.add(pr,c);
+        c.gridx=0;
+        c.gridy=0;
+        jPanel1.add(mail,c);
+        ab.setVisible(false);
+        pr.setVisible(true);
+        mail.setVisible(false);
     }
 
    
@@ -28,179 +41,117 @@ public class Home extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 460));
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Selectionner" }));
-        add(jComboBox1);
-        jComboBox1.setBounds(160, 52, 179, 29);
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(580, 468));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 89, 570, 420));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        jLabel4.setText("Nom du stagiaire :");
-        add(jLabel4);
-        jLabel4.setBounds(26, 55, 130, 20);
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
-        jLabel5.setText("Date d'absence :");
-        add(jLabel5);
-        jLabel5.setBounds(26, 87, 130, 20);
-
-        try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        add(jFormattedTextField1);
-        jFormattedTextField1.setBounds(160, 87, 179, 24);
-
-        jCheckBox1.setText("Justifié");
-        add(jCheckBox1);
-        jCheckBox1.setBounds(345, 88, 100, 23);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        add(jScrollPane1);
-        jScrollPane1.setBounds(20, 190, 530, 250);
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton1.setText("Ajouter");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel1.setText("E-mail");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(263, 120, 80, 30);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 110, 30));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jButton2.setText("Actualier");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel2.setText("Absence");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
             }
         });
-        add(jButton2);
-        jButton2.setBounds(453, 153, 100, 30);
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 80, 30));
 
-        jButton3.setText("Envoyer");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel3.setText("Profil");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
             }
         });
-        add(jButton3);
-        jButton3.setBounds(450, 20, 73, 23);
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 60, 30));
+
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel4.setText("Déconnecter");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 90, 30));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 390, 10));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 390, 10));
+
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 20, 30));
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, 20, 30));
+
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 20, 30));
+
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 20, 30));
+
+        jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 20, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nom =jComboBox1.getSelectedItem().toString();
-        String date=jFormattedTextField1.getText();
-        String justif;
-        if(jCheckBox1.isSelected()){
-            justif="justifé";
-        }else{
-            justif="non justifié";
-        }
-        String sql1="select Id from stagiaire where NomComplet='"+jComboBox1.getSelectedItem().toString()+"'";
-        int Id = 0;
-        try {
-            st=cnx.prepareStatement(sql1);
-            result=st.executeQuery();
-            if(result.next()){
-                 Id=result.getInt("Id");
-            }
-            } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null,ex);
-        }
-        String sql= "insert into absence(nom,dateAbs,justifie) values(?,?,?)";
-        try {
-            if(!nom.equals("Selectionner")&&!date.equals("")){
-                    st=cnx.prepareStatement(sql);
-                    st.setInt(1, Id);
-                    st.setString(2, date);
-                    st.setString(3, justif);
-                    st.execute();
-                    jComboBox1.setSelectedItem("selectionner");
-                    jFormattedTextField1.setText("");
-                    JOptionPane.showMessageDialog(null, "absence ajoutée avec succès!");
-                    jComboBox1.setSelectedItem("selectionner");
-                    jCheckBox1.setSelected(false);
-                    UpdateTable();
-            }else{
-                JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        ab.setVisible(false);
+        pr.setVisible(false);
+        mail.setVisible(true);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        UpdateTable();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        ab.setVisible(true);
+        pr.setVisible(false);
+        mail.setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        ab.setVisible(false);
+        pr.setVisible(true);
+        mail.setVisible(false);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         
-    }//GEN-LAST:event_jButton3ActionPerformed
- public void remplirComboBox(){
-        String sql="select * from stagiaire";
-        try {
-            st=cnx.prepareStatement(sql);
-            result=st.executeQuery();
-            while(result.next()){
-                String nom=result.getString("NomComplet");
-                jComboBox1.addItem(nom);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
- public void UpdateTable(){
-         String sql="select NomComplet,dateAbs,justifie from absence,stagiaire where nom=Id";
-        try {
-            st=cnx.prepareStatement(sql);
-            result=st.executeQuery();
-            jTable1.setModel(DbUtils.resultSetToTableModel(result));
-        } catch (SQLException ex) {
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+    }//GEN-LAST:event_jLabel4MouseClicked
+
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     // End of variables declaration//GEN-END:variables
 }

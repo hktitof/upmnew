@@ -5,6 +5,7 @@
  */
 package home_page;
 
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
@@ -266,6 +267,7 @@ public class Home_page extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 
                 new Home_page().setVisible(true);

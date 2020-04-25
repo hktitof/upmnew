@@ -3,8 +3,9 @@ package login_form;
 import connection.ConnexionMysql;
 import home_page.Home_page;
 import java.awt.Color;
-import javax.swing.*;
-import java.awt.event.*;
+import java.awt.HeadlessException;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.*;
 import javax.swing.JOptionPane;
 /**
@@ -169,13 +170,26 @@ public class Lofin_Page extends javax.swing.JFrame {
             st =cnx.prepareStatement(sql);
             result=st.executeQuery();
             if(result.next()){
+                String nom=result.getString("nomCompletAdmin");
+                String username=result.getString("Username");
+                String password=result.getString("Password");
+                String tele=result.getString("numTeleAdmin");
+                Blob img= result.getBlob("image");
+                String sql1="insert into userconnect(nomUser,teleUser,nomUtilisatr,Mdp,photo) values(?,?,?,?,?)";
+                st=cnx.prepareStatement(sql1);
+                st.setString(1, nom);
+                st.setString(2, tele);
+                st.setString(3, username);
+                st.setString(4, password);
+                st.setBlob(5, img);
+                st.execute();
                 home=new Home_page();
                 home.setVisible(true);
                 this.dispose();
             }else{
                 JOptionPane.showMessageDialog(null, "Nom d'utilisateur ou mot de passe incorrect");
             }
-        }catch (Exception e){
+        }catch (SQLException | HeadlessException e){
             JOptionPane.showMessageDialog(null, "not connected to database");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
