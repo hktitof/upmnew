@@ -14,12 +14,13 @@ public class Home extends javax.swing.JPanel {
     absence ab;
     profil pr;
     mails mail;
-    
+
     public Home() {
         initComponents();
         ab=new absence();
         pr= new profil();
         mail =new mails();
+  
         jPanel1.setLayout(layout);
         GridBagConstraints c= new GridBagConstraints();
         c.gridx=0;
@@ -34,6 +35,7 @@ public class Home extends javax.swing.JPanel {
         ab.setVisible(false);
         pr.setVisible(true);
         mail.setVisible(false);
+        
     }
 
    
@@ -135,7 +137,7 @@ public class Home extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        
+       System.exit(0);
     }//GEN-LAST:event_jLabel4MouseClicked
 
  

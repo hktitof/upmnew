@@ -184,7 +184,7 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
         try {
             if(!nom.equals("")&&!mail.equals("")&&!tele.equals("")&&!cin.equals("")&&!etabl.equals("")&&!prj.equals("Selectionner")&&!encad.equals("Selectionner")&&!specia.equals("")){
             Pattern patt1 = Pattern.compile("^[a-zA-Z àâäéèêëîïôöûü]+$");
-            Pattern patt2 = Pattern.compile("^[0123456789]+$");
+            Pattern patt2 = Pattern.compile("^[0-9]{10}$");
             Pattern patt3 = Pattern.compile("^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)+$");
             Pattern patt4 = Pattern.compile("^[a-zA-Z 0123456789]+$");
             Matcher m1 = patt1.matcher(nom);
@@ -226,7 +226,7 @@ public class Ajouterstagiaire extends javax.swing.JPanel {
                                JOptionPane.showMessageDialog(null, "Veulliez saisir un adresse mail valide"); 
                             }
                         }else{
-                            JOptionPane.showMessageDialog(null, "Le numéro de téléphone doit pas contenir que des chiffres");
+                            JOptionPane.showMessageDialog(null, "Le numéro de téléphone doit pas contenir que 10 chiffres");
                         }
                     }else{
                         JOptionPane.showMessageDialog(null, "Le nom de la spécialité doit pas contenir que des lettres");

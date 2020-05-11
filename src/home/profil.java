@@ -2,6 +2,8 @@
 package home;
 
 import connection.ConnexionMysql;
+import java.awt.Image;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +11,9 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class profil extends javax.swing.JPanel {
     public Connection cnx;
@@ -23,10 +27,9 @@ public class profil extends javax.swing.JPanel {
             st=cnx.prepareStatement(sql);
             result=st.executeQuery();
             while(result.next()){
-                jTextField2.setText(result.getString("nomUtilisatr"));
-                jTextField1.setText(result.getString("Mdp"));
-                jTextField4.setText(result.getString("nomUser"));
-                jTextField5.setText(result.getString("teleUser"));
+                jLabel10.setText(result.getString("nomUtilisatr"));
+                jLabel11.setText(result.getString("nomUser"));
+                jLabel8.setText(result.getString("teleUser"));
                 byte[] img =result.getBytes("photo");
                 ImageIcon image=new ImageIcon(img);
                 java.awt.Image im =image.getImage();
@@ -44,71 +47,86 @@ public class profil extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 420));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 240, 30));
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 240, 30));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
-        jLabel2.setText("Mot de passe :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 170, 20));
+        setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel3.setText("Nom d'utilisateur :");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 130, 20));
+        add(jLabel3);
+        jLabel3.setBounds(50, 110, 130, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel4.setText("Nom complet :");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 170, 20));
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 240, 30));
+        add(jLabel4);
+        jLabel4.setBounds(50, 180, 170, 20);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
         jLabel5.setText("Numéro de téléphone :");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 170, 20));
-        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 240, 30));
+        add(jLabel5);
+        jLabel5.setBounds(50, 260, 170, 20);
 
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
         jPanel1.add(jLabel1);
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 220, 240));
+        add(jPanel1);
+        jPanel1.setBounds(320, 110, 220, 200);
 
         jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 2, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(102, 102, 255));
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 240, 40));
+        add(jLabel6);
+        jLabel6.setBounds(280, 20, 240, 40);
 
         jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 2, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(102, 102, 255));
         jLabel7.setText("Bienvenue ");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 140, 40));
+        add(jLabel7);
+        jLabel7.setBounds(140, 20, 140, 40);
+
+        jLabel8.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 153, 255));
+        jLabel8.setText("jLabel8");
+        add(jLabel8);
+        jLabel8.setBounds(50, 280, 240, 30);
+
+        jLabel10.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(153, 153, 255));
+        jLabel10.setText("jLabel8");
+        add(jLabel10);
+        jLabel10.setBounds(50, 130, 260, 30);
+
+        jLabel11.setBackground(new java.awt.Color(153, 153, 255));
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(153, 153, 255));
+        jLabel11.setText("jLabel8");
+        add(jLabel11);
+        jLabel11.setBounds(50, 200, 250, 30);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

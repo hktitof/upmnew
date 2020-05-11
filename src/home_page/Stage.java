@@ -106,7 +106,7 @@ public class Stage extends javax.swing.JPanel {
             }
         });
 
-        back.setIcon(new javax.swing.ImageIcon("C:\\Users\\hp\\Desktop\\projetTutoù\\04.04.23.22\\upmnew\\src\\home_page\\sssssssssssss.jpg")); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/flesh.jpg"))); // NOI18N
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +141,7 @@ public class Stage extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

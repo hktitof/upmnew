@@ -33,15 +33,16 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="96" green="96" red="96" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="username"/>
+        <Property name="text" type="java.lang.String" value="nom de l&apos;utilisateur"/>
       </Properties>
       <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1_UsernameActionPerformed"/>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField1_UsernameFocusGained"/>
         <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextField1_UsernameFocusLost"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="170" y="340" width="250" height="40"/>
+          <AbsoluteConstraints x="170" y="340" width="290" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -53,7 +54,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="96" green="96" red="96" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="password"/>
+        <Property name="text" type="java.lang.String" value="mot de passe"/>
       </Properties>
       <Events>
         <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPasswordField1_PasswordFocusGained"/>
@@ -61,7 +62,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="170" y="410" width="250" height="40"/>
+          <AbsoluteConstraints x="170" y="410" width="290" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -76,14 +77,14 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="64" green="64" red="64" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Sign in"/>
+        <Property name="text" type="java.lang.String" value="Se connecter"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="130" y="510" width="140" height="40"/>
+          <AbsoluteConstraints x="130" y="510" width="160" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -98,14 +99,14 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="64" green="64" red="64" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Quit"/>
+        <Property name="text" type="java.lang.String" value="Quitter"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="320" y="510" width="140" height="40"/>
+          <AbsoluteConstraints x="320" y="510" width="160" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -117,7 +118,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="64" green="64" red="64" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Show Password"/>
+        <Property name="text" type="java.lang.String" value="Afficher le mot de passe"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordActionPerformed"/>

@@ -74,28 +74,31 @@ public class Encadrent extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        ajouter.setText("Add");
+        ajouter.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        ajouter.setText("Ajouter");
         ajouter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ajouterActionPerformed(evt);
             }
         });
 
-        supprimer.setText("Delete");
+        supprimer.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        supprimer.setText("Supprimer");
         supprimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 supprimerActionPerformed(evt);
             }
         });
 
-        modifier.setText("Modify");
+        modifier.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        modifier.setText("Modifier");
         modifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modifierActionPerformed(evt);
             }
         });
 
-        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/sssssssssssss.jpg"))); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/flesh.jpg"))); // NOI18N
         back.setText("back");
         back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,15 +126,15 @@ public class Encadrent extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(270, 270, 270)
                 .addComponent(ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(supprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(modifier, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(Encapannel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

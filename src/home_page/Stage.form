@@ -40,7 +40,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="back" min="-2" pref="90" max="-2" attributes="0"/>
+              <Component id="back" min="-2" pref="104" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -108,7 +108,7 @@
     <Component class="javax.swing.JButton" name="back">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\hp\Desktop\projetTuto&#xf9;\04.04.23.22\upmnew\src\home_page\sssssssssssss.jpg"/>
+          <Image iconType="3" name="/home_page/flesh.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>

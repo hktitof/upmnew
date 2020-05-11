@@ -42,6 +42,7 @@ public class Modifierstage extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton1.setText("Modifier");
@@ -50,18 +51,24 @@ public class Modifierstage extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 88, 31));
+        add(txt_internshipProject, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 150, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Nom du service :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 130, 20));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel4.setText("Projet du stage :");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 130, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel5.setText("Date début :");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 130, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel2.setText("date fin :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 130, 20));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton3.setText("Actualiser");
@@ -70,8 +77,10 @@ public class Modifierstage extends javax.swing.JPanel {
                 jButton3ActionPerformed(evt);
             }
         });
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 90, 30));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "selectionner" }));
+        add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 150, 30));
 
         try {
             jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -79,6 +88,12 @@ public class Modifierstage extends javax.swing.JPanel {
             ex.printStackTrace();
         }
         jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
+        add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 150, 30));
 
         try {
             jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -86,6 +101,7 @@ public class Modifierstage extends javax.swing.JPanel {
             ex.printStackTrace();
         }
         jFormattedTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        add(jFormattedTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 150, 30));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,85 +121,11 @@ public class Modifierstage extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable2);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 200, 480, 110));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Stage Modify.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(txt_internshipProject, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(450, 450, 450)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(360, 360, 360)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(txt_internshipProject, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(320, 320, 320)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(320, 320, 320)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(200, 200, 200)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 380));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -194,13 +136,24 @@ public class Modifierstage extends javax.swing.JPanel {
         int ligne=jTable2.getSelectedRow();
         String id= jTable2.getModel().getValueAt(ligne, 0).toString();
         String sql="update stage set stageService = ? ,stageProjet = ?,stageDebut= ?,stageFin = ? where stageId='"+id+"'";
+        String sql2="select serviceId from service where serviceNom='"+jComboBox1.getSelectedItem().toString()+"'";
+        int serviceid = 0;
+        try {
+            st=cnx.prepareStatement(sql2);
+            result=st.executeQuery();
+            if(result.next()){
+                 serviceid=result.getInt("serviceId");
+            }
+            } catch (SQLException ex) {
+            Logger.getLogger(Modifierstage.class.getName()).log(Level.SEVERE, null,ex);
+        }
         try {
             if(!projet.equals("")&&!service.equals("selectionner")&&!debut.equals("")&&!fin.equals("")){
                 Pattern patt1 = Pattern.compile("^[a-zA-Z àâäéèêëîïôöûü]+$");
                 Matcher m1 = patt1.matcher(projet);
                  if (m1.find()){
                     st=cnx.prepareStatement(sql);
-                    st.setString(1, jComboBox1.getSelectedItem().toString());
+                    st.setInt(1, serviceid);
                     st.setString(2, txt_internshipProject.getText());
                     st.setString(3, jFormattedTextField1.getText());
                     st.setString(4, jFormattedTextField2.getText());
@@ -245,6 +198,10 @@ public class Modifierstage extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "requet failed");
         }
     }//GEN-LAST:event_jTable2MouseClicked
+
+    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
     public void UpdateTable(){
          String sql="select stageId,stageProjet,serviceNom,stageDebut,stageFin from stage,service where stageService=serviceId";
         try {

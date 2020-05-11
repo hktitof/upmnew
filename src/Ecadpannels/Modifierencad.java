@@ -41,7 +41,7 @@ public class Modifierencad extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(570, 460));
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton1.setText("Modifier");
@@ -50,8 +50,7 @@ public class Modifierencad extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1);
-        jButton1.setBounds(440, 350, 82, 30);
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 350, 82, 30));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -71,8 +70,7 @@ public class Modifierencad extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        add(jScrollPane1);
-        jScrollPane1.setBounds(40, 210, 480, 130);
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 480, 130));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jButton2.setText("Actualiser");
@@ -81,53 +79,43 @@ public class Modifierencad extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        add(jButton2);
-        jButton2.setBounds(340, 350, 89, 30);
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel3.setText("Nom d'encadrent :");
-        add(jLabel3);
-        jLabel3.setBounds(40, 50, 130, 20);
-        add(jTextField1);
-        jTextField1.setBounds(240, 80, 160, 30);
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 130, 20));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 160, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel4.setText("Adresse mail :");
-        add(jLabel4);
-        jLabel4.setBounds(240, 50, 130, 20);
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 130, 20));
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
             }
         });
-        add(jTextField4);
-        jTextField4.setBounds(40, 80, 170, 30);
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 170, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel5.setText("Numéro du téléphone :");
-        add(jLabel5);
-        jLabel5.setBounds(40, 130, 130, 20);
-        add(jTextField2);
-        jTextField2.setBounds(40, 160, 170, 30);
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 130, 20));
+        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 170, 30));
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);
             }
         });
-        add(jTextField3);
-        jTextField3.setBounds(240, 160, 160, 30);
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 160, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
         jLabel2.setText("Niveau hiérarchique :");
-        add(jLabel2);
-        jLabel2.setBounds(240, 130, 130, 20);
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, 130, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/home_page/Framed edit.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        add(jLabel1);
-        jLabel1.setBounds(0, 0, 570, 410);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 410));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
